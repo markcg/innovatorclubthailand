@@ -6,27 +6,38 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="<?php echo csrf_token() ?>" />
         <title>Innovator Club Thailand</title>
-        <!-- Scripts -->
-        <script src="/js/jquery.min.js" type="text/javascript"></script>
-        <script src="/js/anijs.js" type="text/javascript"></script>
         <!-- CSS -->
-        <link href="/css/app.css" rel="stylesheet" type="text/css"/>
         <link href="/css/normalize.css" rel="stylesheet" type="text/css"/>
         <link href="/css/skeleton.css" rel="stylesheet" type="text/css"/>
+        <link href="/css/app.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="http://anijs.github.io/lib/anicollection/anicollection.css">
+        <link href='http://fonts.googleapis.com/css?family=Questrial' rel='stylesheet' type='text/css'>
+        <!-- Scripts -->
+        <script src="/js/jquery.min.js" type="text/javascript"></script>
         <!-- Fonts -->
     </head>
     <body class="u-full-width">
         <header class="u-full-width">
-            <div class="pull-left column"> 
-                <div class="inline"> </div>
-            </div>
-            <div class="pull-right column">
-                <div class="inline"> </div>
+            <div class="container">
+                <div class="row">
+                    <div class="u-pull-left four columns">
+                        <div class="logo">Innovator Club Thailand</div>
+                    </div>
+                    <div class="u-pull-right menu" style="overflow: hidden;">
+                        <div class="u-pull-right header-menu-link ">Contact Us</div>
+                        <div class="u-pull-right header-menu-link header-menu-after">About Us</div>
+                        <div class="u-pull-right header-menu-link header-menu-after"><a href="/news">News & Activity</a></div>
+                        <div class="u-pull-right header-menu-link header-menu-after">Project</div>
+                    </div>
+                </div>
             </div>
         </header>
         <div class="u-full-width wrapper">
             @yield('content')
         </div>
         <footer class="u-full-width"></footer>
+        <!-- Animation -->
+        <script src="/js/anijs.js" type="text/javascript"></script>
+        <script src="/js/helpers/scrollreveal/anijs-helper-scrollreveal.js" type="text/javascript"></script>
     </body>
 </html>

@@ -7,9 +7,38 @@ and open the template in the editor.
     Created on : Jul 12, 2015, 1:19:16 AM
     Author     : W.J
 */
+/*Main Site*/
 html{height: 100%;}
-body{overflow: hidden;height: 100%;position: relative;}
-header{height: 100px;}
-footer{position: absolute;bottom: 0;height: 200px;}
+body{overflow-x: hidden;height: 100%;position: relative;font-family: "Questrial",sans-serif;}
+header{height: 60px;font-size: 20px;}
+footer{bottom: 0;height: 200px;}
+a{text-decoration: none;color: black;}
 .wrapper{margin-bottom: 200px;}
-.inline{display: inline-block};
+.inline{display: inline-block;}
+.column{margin-left: 0;}
+.max-john{font-family: 'MaxJohn',sans-serif;font-size: 20px;}
+.questrial{font-family: "Questrial",sans-serif;}
+.had-animate{opacity: 0;}
+
+@font-face {
+    font-family: MaxJohn;
+    src: url(/css/font/MaxJohn.ttf);
+}
+
+/*Header*/
+.logo{padding: 10px;}
+.menu{font-size: 16px;}
+.title.header{font-size: 100px;font-family: 'MaxJohn',sans-serif;line-height: 1;}
+.header-menu-link{padding: 15px 5px;}
+.header-menu-after::after{
+    content: "|";
+    margin-left: 5px;
+}
+
+/*Landing*/
+.sign-up-area{background-image: url("/image/landing/Landing-Screen.jpg");min-height: 500px;background-position: center;}
+.sign-up-area .column{margin: 0;}
+.sign-up-area input{ width: 50%; padding: 10px;font-size: 20px;height: 50px !important;text-align: center;}
+.sign-up-area input::placeholder{text-align: center;}
+.sign-up-area button{font-size: 15px;}
+h1,h2,h3,h4{font-family: "MaxJohn",sans-serif;}
