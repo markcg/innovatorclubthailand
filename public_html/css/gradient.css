@@ -1,0 +1,17 @@
+/*Landing scheme*/
+.landing-gradient{
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#008919+25,29a035+75 */
+    background: #008919; /* Old browsers */
+    background: url("/image/landing/binding-light.png") -moz-linear-gradient(top,  #008919 25%, #29a035 75%); /* FF3.6+ */
+    background: url("/image/landing/binding-light.png") -webkit-gradient(linear, left top, left bottom, color-stop(25%,#008919), color-stop(75%,#29a035)); /* Chrome,Safari4+ */
+    background: url("/image/landing/binding-light.png") -webkit-linear-gradient(top,  #008919 25%,#29a035 75%); /* Chrome10+,Safari5.1+ */
+    background: url("/image/landing/binding-light.png") -o-linear-gradient(top,  #008919 25%,#29a035 75%); /* Opera 11.10+ */
+    background: url("/image/landing/binding-light.png") -ms-linear-gradient(top,  #008919 25%,#29a035 75%); /* IE10+ */
+    background: url("/image/landing/binding-light.png") linear-gradient(to bottom,  #008919 25%,#29a035 75%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008919', endColorstr='#29a035',GradientType=0 ); /* IE6-9 */
+}
+.landing-texture{
+    background-image: url("/image/landing/binding-light.png");
+    background-repeat: repeat;
+}
+

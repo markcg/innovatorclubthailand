@@ -11,19 +11,30 @@ and open the template in the editor.
 html{height: 100%;}
 body{overflow-x: hidden;height: 100%;position: relative;font-family: "Questrial",sans-serif;}
 header{height: 60px;font-size: 20px;}
-footer{bottom: 0;height: 200px;}
+footer{bottom: 0;height: 200px;color: white;}
 a{text-decoration: none;color: black;}
-.wrapper{margin-bottom: 200px;}
+.wrapper{padding-bottom: 200px;}
+.site-wrapper{min-height: 100%;}
 .inline{display: inline-block;}
 .column{margin-left: 0;}
 .max-john{font-family: 'MaxJohn',sans-serif;font-size: 20px;}
 .questrial{font-family: "Questrial",sans-serif;}
 .had-animate{opacity: 0;}
-
+/*Font*/
 @font-face {
     font-family: MaxJohn;
     src: url(/css/font/MaxJohn.ttf);
 }
+@font-face {
+    font-family: Prajad;
+    src: url(/css/font/CSPraJad.otf);
+}
+.font-xsmall{font-size: 20px;}
+.font-small{font-size: 30px;}
+.font-medium{font-size: 40px;}
+.font-large{font-size: 60px;}
+.font-xlarge{font-size: 80px;}
+.font-xxlarge{font-size: 100px;}
 
 /*Header*/
 .logo{padding: 10px;}
@@ -41,4 +52,14 @@ a{text-decoration: none;color: black;}
 .sign-up-area input{ width: 50%; padding: 10px;font-size: 20px;height: 50px !important;text-align: center;}
 .sign-up-area input::placeholder{text-align: center;}
 .sign-up-area button{font-size: 15px;}
+.landing-component{margin-bottom: 100px;}
+.quote{font-family: "Prajad" ,sans-serif !important;}
 h1,h2,h3,h4{font-family: "MaxJohn",sans-serif;}
+
+/*Animation*/
+.hidden-animation{opacity: 0;}
+.show-animation{display: block !important;}
+.animated.landing-reveal {
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+}

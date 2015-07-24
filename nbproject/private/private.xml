@@ -3,9 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/layouts/_footer.blade.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/home/contact/contact.blade.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/home/about/about.blade.php</file>
             <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/home/landing.blade.php</file>
             <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/layouts/_layout.blade.php</file>
-            <file>file:/F:/xampp/htdocs/innovatorclub/public_html/css/app.css</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/app/Models/WordPress/WordPressPost.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/app/Http/Controllers/HomeController.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/config/database.php</file>
         </group>
     </open-files>
 </project-private>
