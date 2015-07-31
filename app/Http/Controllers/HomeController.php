@@ -22,7 +22,7 @@ class HomeController extends Controller {
         if ($detect->isMobile()) {
             return view('home.landing');
         } else {
-            return view('home.mobile.landing');
+            return view('home.landing');
         }
     }
 

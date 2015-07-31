@@ -170,6 +170,25 @@
         </div>
     </div>
 </div>
+<div class="row landing-component hidden-animation" style="background-color: #e5e5e5;text-align: center;" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+    <div class="row landing-texture">
+        <div class="container landing-component" style="padding: 50px 0;" >
+            <div class="column"><h1>เราคือใคร</h1></div>
+            <div class="row">
+                <div class="six columns"><img width="200" height="250"></div>
+                <div class="six columns" style="text-align: left;">
+                    <div style="padding: 0 10px;">
+                        พวกเราคือศิษย์เก่าของ มหาวิทยาลัยจุฬาฯ, มหิดล, RMIT, UCL
+                        พวกเรามีความเชื่อว่าความคิดสร้างสรรค์ ไม่จำเป็นต้องหยุดอยู่แค่ในกระดาษ หรือแค่ส่งการบ้านให้อาจารย์
+                        หลังจากที่ค้นพบปัญหา พวกเรามีโอกาสทำงานใกล้ชิดกับสถาบัน CDIP ซึ่งเป็นผู้เชี่ยวชาญทางด้าน research
+                        ,จด IP เเละ ได้รับการสนับสนุนจาก NSTDA, THAIBISPA, Thai Science Park, Software Park 
+                        และสถาบันอื่นๆอีกมากมาย ที่พร้อมจะเปลี่ยนความคิดของคุณให้เป็นความจริงได้
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="background-slider">
 
 </div>
