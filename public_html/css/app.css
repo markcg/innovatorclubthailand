@@ -11,9 +11,9 @@ and open the template in the editor.
 html{height: 100%;}
 body{overflow-x: hidden;height: 100%;position: relative;font-family: "Questrial",sans-serif;}
 header{height: 60px;font-size: 20px;}
-footer{bottom: 0;height: 200px;color: white;}
+footer{bottom: 0;min-height: 150px;color: white;}
 a{text-decoration: none;color: black;}
-.wrapper{padding-bottom: 200px;}
+.wrapper{padding-bottom: 200px;padding: 0 10px;}
 .site-wrapper{min-height: 100%;}
 .inline{display: inline-block;}
 .column{margin-left: 0;}
@@ -39,12 +39,30 @@ a{text-decoration: none;color: black;}
 /*Header*/
 .logo{padding: 10px;}
 .menu{font-size: 16px;}
+.menu-responsive{position: fixed;top: 0;left: 0;height: 100%;background-color: #2c6700;z-index: 100;display: none;}
+.menu-responsive .header-menu-link, .menu-responsive a{color: white !important;}
+.menu-button{font-size: 30px;font-family: "MaxJohn",sans-serif; display: none;position: fixed;z-index: 99}
+.corner-right{top: 10px;right: 10px;}
+.corner-left{top: 10px;left: 10px;}
 .title.header{font-size: 100px;font-family: 'MaxJohn',sans-serif;line-height: 1;}
+.header-menu{border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;background-color: #2c6700;}
+.header-menu , .header-menu a{color: white;}
 .header-menu-link{padding: 15px 5px;}
 .header-menu-after::after{
     content: "|";
     margin-left: 5px;
 }
+@media screen and (max-width:590px){
+    .menu{display:none;}
+    //.menu-responsive{display: block;}
+    .menu-button{display: block;}
+    .header-menu{border-radius: 0;background-color: white;}
+    .header-menu , .header-menu a{color: black;}
+    .responsive-hide{display: none;}
+    h1{font-size: 3rem;}
+}
+/*Footer*/
+.footer-wrapper{position: relative;background-color: #2c6700;height: 100%; text-align: center;padding-bottom: 40px;}
 
 /*Landing*/
 .sign-up-area{background-image: url("/image/landing/Landing-Screen.jpg");min-height: 500px;background-position: center;}
@@ -55,6 +73,10 @@ a{text-decoration: none;color: black;}
 .landing-component{margin-bottom: 100px;}
 .quote{font-family: "Prajad" ,sans-serif !important;}
 h1,h2,h3,h4{font-family: "MaxJohn",sans-serif;}
+.mobile-showcase{width: 210px;height: 380px;overflow: hidden;}
+.circle{border-radius: 50%;border: solid black 1px;}
+.how-to{line-height: 2;padding: 5px;}
+.how-to-case{position: relative;width: 150px;height: 150px;}
 
 /*Animation*/
 .hidden-animation{opacity: 0;}

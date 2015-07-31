@@ -21,40 +21,27 @@
             </div>
         </div>
         <div class="row" style="text-align: center;">
-            <div class="column" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to">ไอเดีย โดย คุณ</div>
+            <div class="four columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+                <div class="column"><img height="200" width="200"></div>
+                <div class="column"><h3>สร้างโปรเจค</h3></div>
+                <div class="column max-john font-small">
+                    เพียงขั้นตอนง่ายๆ 
+                    <br>นำเสนอรายละเอียดของโปรเจคคุณ 
+                    แสดงวิสัยทัศน์และเป้าหมายของโปรเจค
                 </div>
             </div>
-        </div>
-        <div class="row" style="text-align: center; margin-top: 50px;">
-            <div class="six columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to">สร้างโปรเจค</div>
+            <div class="four columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+                <div class="column"><img height="200" width="200"></div>
+                <div class="column"><h3>แสดงผลงาน</h3></div>
+                <div class="column max-john font-small">
+                    แสดงผลงานผ่านเว็บไซต์ของเรา ร่วมแชร์และแลกเปลี่ยนความคิดเห็นกันในกลุ่มนักประดิษฐ์ และ นักพัฒนา
                 </div>
             </div>
-            <div class="six columns responsive-hide" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to">นักลงทุน และ นักวิจัย</div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="text-align: center; margin-top: 50px;">
-            <div class="six columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to">เผยแพร่</div>
-                </div>
-            </div>
-            <div class="six columns responsive-hide" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to">ค้นหาโปรเจคที่สนใจ</div>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="text-align: center; margin-top: 50px;">
-            <div class="column" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to">จับคู่โปรเจค และ นักลงทุน เพื่อต่อยอด</div>
+            <div class="four columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+                <div class="column"><img height="200" width="200"></div>
+                <div class="column"><h3>เริ่มต้นลงทุน</h3></div>
+                <div class="column max-john font-small">
+                    นักลงทุนจากทั่วทุกมุมโลก พร้อมที่จะลงทุนกับคุณ 
                 </div>
             </div>
         </div>
@@ -143,17 +130,11 @@
 <div class="row landing-component hidden-animation" style="background-color: #e5e5e5;text-align: center;" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
     <div class="row landing-texture">
         <div class="container landing-component" style="padding: 50px 0;" >
-            <div class="column"><h1>เราคือใคร</h1></div>
+            <div class="column"><h1>ผู้ร่วมก่อตั้ง</h1></div>
             <div class="row">
                 <div class="six columns"><img width="200" height="250"></div>
                 <div class="six columns" style="text-align: left;">
-                    <div style="padding: 0 10px;">
-                        พวกเราคือศิษย์เก่าของ มหาวิทยาลัยจุฬาฯ, มหิดล, RMIT, UCL
-                        พวกเรามีความเชื่อว่าความคิดสร้างสรรค์ ไม่จำเป็นต้องหยุดอยู่แค่ในกระดาษ หรือแค่ส่งการบ้านให้อาจารย์
-                        หลังจากที่ค้นพบปัญหา พวกเรามีโอกาสทำงานใกล้ชิดกับสถาบัน CDIP ซึ่งเป็นผู้เชี่ยวชาญทางด้าน research
-                        ,จด IP เเละ ได้รับการสนับสนุนจาก NSTDA, THAIBISPA, Thai Science Park, Software Park 
-                        และสถาบันอื่นๆอีกมากมาย ที่พร้อมจะเปลี่ยนความคิดของคุณให้เป็นความจริงได้
-                    </div>
+                    ประวัตืผู้ร่วมก่อตั้ง
                 </div>
             </div>
         </div>

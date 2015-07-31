@@ -61,9 +61,9 @@ return [
         'wordpress' => [
             'driver' => 'mysql',
             'host' => 'localhost',
-            'database' => 'admin_innovatorwp',
-            'username' => 'admin_inno',
-            'password' => 'InnovatorC1',
+            'database' => 'innovator_wp',
+            'username' => 'root',
+            'password' => '',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',

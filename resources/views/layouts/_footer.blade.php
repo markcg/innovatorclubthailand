@@ -1,5 +1,5 @@
-<div class="row" style="position: relative;background-color: #39702F;height: 100%; text-align: center;">
-    <div class="container" style="height: 80%;">
+<div class="row footer-wrapper">
+    <div class="container" style="min-height: 80%;">
         <div class="inline">
             <img title="Sponsor" width="80" height="80" style="background-color: white; margin: 10px;">
             <label>Sponsor</label>

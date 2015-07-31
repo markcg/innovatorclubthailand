@@ -54,4 +54,9 @@ class HomeController extends Controller {
         ]);
     }
 
+    // Under develop
+    function getM() {
+        return view('home.mobile.landing');
+    }
+
 }
