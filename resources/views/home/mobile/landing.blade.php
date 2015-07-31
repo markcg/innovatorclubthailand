@@ -26,39 +26,45 @@
         <div class="row" style="text-align: center;">
             <div class="column" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
                 <div class="inline circle how-to-case">
-                    <div class="how-to">ไอเดีย โดย คุณ</div>
+                    <div class="how-to"><img src="/image/landing/how-to/how-to-1.jpg"alt=""/></div>
                 </div>
+                <label>ไอเดียโดยคุณ</label>
             </div>
         </div>
         <div class="row" style="text-align: center; margin-top: 50px;">
             <div class="six columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
                 <div class="inline circle how-to-case">
-                    <div class="how-to">สร้างโปรเจค</div>
+                    <div class="how-to"><img src="/image/landing/how-to/how-to-2.jpg"alt=""/></div>
                 </div>
+                <label>สร้างโปรเจค</label>
             </div>
-            <div class="six columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+            <div class="six columns responsive-hide" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
                 <div class="inline circle how-to-case">
-                    <div class="how-to">นักลงทุน และ นักวิจัย</div>
+                    <div class="how-to"><img src="/image/landing/how-to/how-to-3.jpg"alt=""/></div>
                 </div>
+                <label>สมัครเป็นนักลงทุนหรือนักวิจัย</label>
             </div>
         </div>
         <div class="row" style="text-align: center; margin-top: 50px;">
             <div class="six columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
                 <div class="inline circle how-to-case">
-                    <div class="how-to">เผยแพร่</div>
+                    <div class="how-to"><img src="/image/landing/how-to/how-to-4.jpg"alt=""/></div>
                 </div>
+                <label>ค้นหาโปรเจคที่คุณถูกใจ</label>
             </div>
-            <div class="six columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+            <div class="six columns responsive-hide" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
                 <div class="inline circle how-to-case">
-                    <div class="how-to">ค้นหาโปรเจคที่สนใจ</div>
+                    <div class="how-to"><img src="/image/landing/how-to/how-to-5.jpg"alt=""/></div>
                 </div>
+                <label></label>
             </div>
         </div>
-        <div class="row" style="text-align: center;">
+        <div class="row" style="text-align: center; margin-top: 50px;">
             <div class="column" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
                 <div class="inline circle how-to-case">
-                    <div class="how-to">จับคู่โปรเจค และ นักลงทุน เพื่อต่อยอด</div>
+                    <div class="how-to"><img src="/image/landing/how-to/how-to-6.jpg" style="width: 180px;position: absolute;left: -15px;height: auto;"alt=""/></div>
                 </div>
+                <label>จับคู่โปรเจคกับนักลงทุน พร้อมต่อยอดไอเดีย</label>
             </div>
         </div>
     </div>

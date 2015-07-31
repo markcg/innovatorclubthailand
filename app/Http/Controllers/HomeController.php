@@ -13,11 +13,17 @@ use CURLFile;
 use App\cURL;
 use App\Models\WordPress\WordPressPost;
 use Spatie\Newsletter\NewsletterFacade as Newsletter;
+use Jenssegers\Agent\Agent;
 
 class HomeController extends Controller {
 
     function getIndex() {
-        return view('home.landing');
+        $detect = new Agent();
+        if ($detect->isMobile()) {
+            return view('home.landing');
+        } else {
+            return view('home.mobile.landing');
+        }
     }
 
     function getContact() {

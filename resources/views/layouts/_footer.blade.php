@@ -1,8 +1,8 @@
 <div class="row footer-wrapper">
     <div class="container" style="min-height: 80%;">
         <div class="inline">
-            <img title="Sponsor" width="80" height="80" style="background-color: white; margin: 10px;">
-            <label>Sponsor</label>
+            <img title="Sponsor" width="80" height="80" style="background-color: white; margin: 10px;" src="/image/layout/footer/sponsor/CDIP.jpg">
+            <label>CDIP</label>
         </div>
         <div class="inline">
             <img title="Sponsor" width="80" height="80" style="background-color: white; margin: 10px;">
