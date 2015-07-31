@@ -3,6 +3,7 @@
 <link href="/css/gradient.css" rel="stylesheet" type="text/css"/>
 <link href="/css/vegas.min.css" rel="stylesheet" type="text/css"/>
 <script src="/js/vegas.min.js" type="text/javascript"></script>
+<style>.header-menu{background-color: rgba(44, 103, 0, 0.4);}</style>
 <div class="row sign-up-area">
     <div class="container" style="text-align: center;">
         <div class="column title header" style="margin-top: 80px;">สนใจค้นหานักลงทุน</div>
@@ -163,5 +164,17 @@
         </div>
     </div>
 </div>
-<div class="background-slider"></div>
+<div id="background-slider">
+
+</div>
+<script>
+    $("#background-slider").vegas({
+        slides: [
+            {src: "/image/landing/slides/1.jpg"},
+            {src: "/image/landing/slides/2.jpg"},
+            {src: "/image/landing/slides/3.jpg"},
+        ],
+        overlay: true
+    });
+</script>
 @endsection
