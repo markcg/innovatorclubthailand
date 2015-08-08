@@ -52,6 +52,9 @@ a{text-decoration: none;color: black;}
     content: "|";
     margin-left: 5px;
 }
+@media screen and (max-width:980px){
+    .responsive-hide, .mobile-hide{display: none;}
+}
 @media screen and (max-width:590px){
     .menu{display:none;}
     //.menu-responsive{display: block;}

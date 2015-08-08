@@ -18,84 +18,49 @@
 </div>
 <div class="container" style="margin-top: 50px;">
     <div class="row landing-component">
-        <div class="column">
-            <div style="text-align: center;">
-                <span><h1>อย่าหยุดไว้เพียงแค่ไอเดีย</h1></span>
-            </div>
-        </div>
-        <div class="row" style="text-align: center;">
-            <div class="column" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to"><img src="/image/landing/how-to/how-to-1.jpg"alt=""/></div>
-                </div>
-                <label>ไอเดียโดยคุณ</label>
-            </div>
-        </div>
         <div class="row" style="text-align: center; margin-top: 50px;">
-            <div class="six columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to"><img src="/image/landing/how-to/how-to-2.jpg"alt=""/></div>
+            <div class="" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+                <div class="inline" style="margin-top: 80px;">
+                    <iframe width="720" height="480" src="https://www.youtube.com/embed/Q4EzYAB8Q4A" frameborder="0" allowfullscreen></iframe>
                 </div>
-                <label>สร้างโปรเจค</label>
-            </div>
-            <div class="six columns responsive-hide" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to"><img src="/image/landing/how-to/how-to-3.jpg"alt=""/></div>
-                </div>
-                <label>สมัครเป็นนักลงทุนหรือนักวิจัย</label>
-            </div>
-        </div>
-        <div class="row" style="text-align: center; margin-top: 50px;">
-            <div class="six columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to"><img src="/image/landing/how-to/how-to-4.jpg"alt=""/></div>
-                </div>
-                <label>ค้นหาโปรเจคที่คุณถูกใจ</label>
-            </div>
-            <div class="six columns responsive-hide" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to"><img src="/image/landing/how-to/how-to-5.jpg"alt=""/></div>
-                </div>
-                <label></label>
-            </div>
-        </div>
-        <div class="row" style="text-align: center; margin-top: 50px;">
-            <div class="column" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline circle how-to-case">
-                    <div class="how-to"><img src="/image/landing/how-to/how-to-6.jpg" style="width: 180px;position: absolute;left: -15px;height: auto;"alt=""/></div>
-                </div>
-                <label>จับคู่โปรเจคกับนักลงทุน พร้อมต่อยอดไอเดีย</label>
             </div>
         </div>
     </div>
 </div>
-<div class="row landing-component">
-    <div class="row hidden-animation" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+<div class="row landing-component  hidden-animation landing-gradient" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+    <div class="row landing-texture">
         <div class="column">
             <div style="text-align: center;margin-top: 50px;">
-                <span><h1>โปรเจคล่าสุดใน Innovator Thailand</h1></span>
+                <span><h1 style="color: white;">บริกรอื่นๆ ใน Innovator Club Thailand</h1></span>
             </div>
         </div>
-        <div class="row" style="text-align: center; margin-bottom: 50px;">
-            <div class="three inline mobile-showcase">
-                <div class="column"><img height="200" width="200" style="background-color: white"></div>
-                <div class="column"><h3>โปรเจค</h3></div>
+        <div class="row" style="text-align: center; margin-bottom: 50px;color: white;">
+            <div class="three columns">
+                <div class="column"><img height="200" width="200" style="background-color: white" src="/image/landing/service/service-1.jpg"></div>
+                <div class="column"><h3>โต๊ะตกพลึก</h3></div>
                 <div class="column max-john font-small">
-                    โปรเจคที่ร่วมหานักลงทุนกับเรา
+
                 </div>
             </div>
-            <div class="three inline mobile-showcase">
-                <div class="column"><img height="200" width="200" style="background-color: white"></div>
-                <div class="column"><h3>โปรเจค</h3></div>
+            <div class="three columns">
+                <div class="column"><img height="200" width="200" style="background-color: white" src="/image/landing/service/service-2.jpg"></div>
+                <div class="column"><h3>บมเพาะ/ปรึกษา</h3></div>
                 <div class="column max-john font-small">
-                    โปรเจคที่ร่วมหานักลงทุนกับเรา
+
                 </div>
             </div>
-            <div class="three inline mobile-showcase">
-                <div class="column"><img height="200" width="200" style="background-color: white"></div>
-                <div class="column"><h3>โปรเจค</h3></div>
+            <div class="three columns">
+                <div class="column"><img height="200" width="200" style="background-color: white" src="/image/landing/service/service-3.jpg"></div>
+                <div class="column"><h3>จด IP</h3></div>
                 <div class="column max-john font-small">
-                    โปรเจคที่ร่วมหานักลงทุนกับเรา
+
+                </div>
+            </div>
+            <div class="three columns">
+                <div class="column"><img height="200" width="200" style="background-color: white" src="/image/landing/service/service-4.jpg"></div>
+                <div class="column"><h3>หาทุน</h3></div>
+                <div class="column max-john font-small">
+
                 </div>
             </div>
         </div>
@@ -105,7 +70,7 @@
     <div class="row hidden-animation" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
         <div class="column">
             <div style="text-align: center;margin-top: 50px;">
-                <span><h1>โปรเจคใน Innovator Thailand</h1></span>
+                <span><h1>โปรเจคล่าสุดใน Innovator Club Thailand</h1></span>
             </div>
         </div>
         <div class="row" style="text-align: center; margin-bottom: 50px;">
@@ -136,6 +101,45 @@
                 <div class="column max-john font-small">
                     โปรเจคที่ร่วมหานักลงทุนกับเรา
                 </div>
+            </div>
+        </div>
+        <div class="row" style="text-align: center; margin-bottom: 50px;">
+            <div class="three columns">
+                <div class="column"><img height="200" width="200" style="background-color: white"></div>
+                <div class="column"><h3>โปรเจค</h3></div>
+                <div class="column max-john font-small">
+                    โปรเจคที่ร่วมหานักลงทุนกับเรา
+                </div>
+            </div>
+            <div class="three columns">
+                <div class="column"><img height="200" width="200" style="background-color: white"></div>
+                <div class="column"><h3>โปรเจค</h3></div>
+                <div class="column max-john font-small">
+                    โปรเจคที่ร่วมหานักลงทุนกับเรา
+                </div>
+            </div>
+            <div class="three columns">
+                <div class="column"><img height="200" width="200" style="background-color: white"></div>
+                <div class="column"><h3>โปรเจค</h3></div>
+                <div class="column max-john font-small">
+                    โปรเจคที่ร่วมหานักลงทุนกับเรา
+                </div>
+            </div>
+            <div class="three columns">
+                <div class="column"><img height="200" width="200" style="background-color: white"></div>
+                <div class="column"><h3>โปรเจค</h3></div>
+                <div class="column max-john font-small">
+                    โปรเจคที่ร่วมหานักลงทุนกับเรา
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row landing-component">
+    <div class="row hidden-animation" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+        <div class="column">
+            <div style="text-align: center;margin-top: 50px;">
+                <span><h1>Success Story</h1></span>
             </div>
         </div>
         <div class="row" style="text-align: center; margin-bottom: 50px;">
