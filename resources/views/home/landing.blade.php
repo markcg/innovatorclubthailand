@@ -19,13 +19,13 @@
 <div class="" style="margin-top: 50px;">
     <div class="row landing-component">
         <div class="row" style="text-align: center; margin-top: 50px;">
-            <div class="six columns" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+            <div class="six columns" style="text-align: right;" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
                 <div class="inline" style="margin-top: 80px;">
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/Q4EzYAB8Q4A" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
-            <div class="six columns mobile-hide" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
-                <div class="inline">
+            <div class="six columns mobile-hide" style="text-align: left;"  data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+                <div class="inline" >
                     <div ><img height="500" src="/image/landing/how-to/how-to.jpg"alt=""/></div>
                 </div>
             </div>

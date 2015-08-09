@@ -7,9 +7,11 @@
             <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/layouts/_footer.blade.php</file>
             <file>file:/F:/xampp/htdocs/innovatorclub/composer.json</file>
             <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/home/landing.blade.php</file>
-            <file>file:/F:/xampp/htdocs/innovatorclub/config/app.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/layouts/_layout.blade.php</file>
             <file>file:/F:/xampp/htdocs/innovatorclub/public_html/css/app.css</file>
             <file>file:/F:/xampp/htdocs/innovatorclub/app/Http/Controllers/HomeController.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/layouts/_header.blade.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/config/database.php</file>
         </group>
     </open-files>
 </project-private>

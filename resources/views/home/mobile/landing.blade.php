@@ -25,6 +25,13 @@
                 </div>
             </div>
         </div>
+        <div class="row" style="text-align: center;">
+            <div class="" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
+                <div class="inline" style="margin-top: 80px;">
+                    <div ><img height="600" src="/image/landing/how-to/how-to.jpg"alt=""/></div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 <div class="row landing-component  hidden-animation landing-gradient" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
