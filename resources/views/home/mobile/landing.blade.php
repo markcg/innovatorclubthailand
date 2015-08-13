@@ -228,11 +228,13 @@
 @section('style')
 <style>
     .carousel{height: 600px;}
-    .carousel-inner img{min-width: 100% !important;min-height: 600px !important;max-width: none !important;overflow: hidden;}
+    .carousel-inner{overflow: hidden;height: 600px;}
+    .carousel-inner img{min-width: 100% !important;min-height: 600px !important;max-width: none !important;}
     .carousel-indicators{bottom: -80px !important;}
     .carousel-indicators li.active,.carousel-indicators li{width: 80px;height: 80px;}
     .carousel-indicators li.active{background-color: #006505;}
     .carousel-indicators li{text-indent: 0;overflow: hidden;text-align: center;border-radius: 50%;border-color: white;border-width: 2px;background-color: white;}
+    .carousel-caption{top: 50px !important;bottom: auto !important;}
 </style>
 <link href="/css/gradient.css" rel="stylesheet" type="text/css"/>
 <link href="/css/vegas.min.css" rel="stylesheet" type="text/css"/>
