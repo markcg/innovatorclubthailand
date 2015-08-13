@@ -1,8 +1,5 @@
 @extends('layouts._layout')
 @section('content')
-<link href="/css/gradient.css" rel="stylesheet" type="text/css"/>
-<link href="/css/vegas.min.css" rel="stylesheet" type="text/css"/>
-<script src="/js/vegas.min.js" type="text/javascript"></script>
 <style>.header-menu{background-color: rgba(44, 103, 0, 0.4);}</style>
 <div class="row sign-up-area">
     <div class="container" style="text-align: center;">
@@ -21,7 +18,7 @@
         <div class="row" style="text-align: center; margin-top: 50px;">
             <div class="six columns" style="text-align: right;" data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
                 <div class="inline" style="margin-top: 80px;">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Q4EzYAB8Q4A" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/bNpx7gpSqbY" frameborder="0" allowfullscreen></iframe>
                 </div>
             </div>
             <div class="six columns mobile-hide" style="text-align: left;"  data-anijs="if: scroll, on: window, do: fadeInUp hinged animated, before: $scrollReveal">
@@ -201,6 +198,13 @@
 <div id="background-slider">
 
 </div>
+@endsection
+@section('style')
+<link href="/css/gradient.css" rel="stylesheet" type="text/css"/>
+<link href="/css/vegas.min.css" rel="stylesheet" type="text/css"/>
+@endsection
+@section('script')
+<script src="/js/vegas.min.js" type="text/javascript"></script>
 <script>
     $("#background-slider").vegas({
         slides: [

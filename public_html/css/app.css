@@ -23,11 +23,11 @@ a{text-decoration: none;color: black;}
 /*Font*/
 @font-face {
     font-family: MaxJohn;
-    src: url(/css/font/MaxJohn.ttf);
+    src: url(/css/fonts/MaxJohn.ttf);
 }
 @font-face {
     font-family: Prajad;
-    src: url(/css/font/CSPraJad.otf);
+    src: url(/css/fonts/CSPraJad.otf);
 }
 .font-xsmall{font-size: 20px;}
 .font-small{font-size: 30px;}

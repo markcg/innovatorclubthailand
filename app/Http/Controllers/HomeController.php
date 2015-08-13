@@ -20,9 +20,9 @@ class HomeController extends Controller {
     function getIndex() {
         $detect = new Agent();
         if ($detect->isMobile()) {
-            return view('home.landing');
+            return view('home.mobile.landing');
         } else {
-            return view('home.landing');
+            return view('home.mobile.landing');
         }
     }
 
