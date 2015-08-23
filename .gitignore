@@ -3,3 +3,4 @@
 /public_html/news
 Homestead.yaml
 .env
+config/database.php
