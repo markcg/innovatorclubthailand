@@ -1,10 +1,11 @@
 @extends('layouts._mobile_layout')
 @section('content')
 <div class="row" style="margin-top: 100px;">
+    <div></div>
     <div class="container" style="text-align: center;" >
-        <div class="column"><h1>ลงชื่อเข้าใช้</h1></div>
+        <div class="column"><h1>สมัครสมาชิก</h1></div>
         <div class="column" id="status"></div>
-        <form id="login">
+        <form id="register">
             <input type="hidden" id="token" name="_token" value="<?php echo csrf_token(); ?>">
             <div class="column">
                 <input type="email" id="email" name="Email" placeholder="E-Mail">
@@ -13,7 +14,7 @@
                 <input type="password" id="password" name="Password" placeholder="Password">
             </div>
             <div class="column">
-                <input class="btn btn-success" id="submit" value="ลงชื่อเข้าใช้">
+                <input class="btn btn-success" id="submit" value="สมัครสมาชิก">
             </div>
         </form>
     </div>
@@ -27,7 +28,7 @@
 <script src="/js/system/memberSystem.js" type="text/javascript"></script>
 <script>
     $(document).ready(function () {
-        memberSystem.login("#login");
+        memberSystem.register("#register");
     });
 </script>
 <script>

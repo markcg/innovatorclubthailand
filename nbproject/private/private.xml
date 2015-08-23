@@ -3,14 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/home/mobile/landing.blade.php</file>
-            <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/layouts/_footer.blade.php</file>
-            <file>file:/F:/xampp/htdocs/innovatorclub/composer.json</file>
-            <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/layouts/_layout.blade.php</file>
-            <file>file:/F:/xampp/htdocs/innovatorclub/app/Http/Controllers/HomeController.php</file>
-            <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/layouts/_mobile_layout.blade.php</file>
-            <file>file:/F:/xampp/htdocs/innovatorclub/public_html/css/app.css</file>
-            <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/layouts/_header.blade.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/app/Http/Controllers/Member/MemberFunction.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/app/Http/Controllers/Member/MemberApiController.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/public_html/js/system/listSystem.js</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/resources/views/member/setup.blade.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/app/Http/Controllers/Member/MemberController.php</file>
+            <file>file:/F:/xampp/htdocs/innovatorclub/public_html/js/system/memberSystem.js</file>
         </group>
     </open-files>
 </project-private>

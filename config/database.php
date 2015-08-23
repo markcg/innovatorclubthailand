@@ -50,9 +50,9 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'host' => 'localhost',
-            'database' => 'innovator',
-            'username' => 'root',
-            'password' => '',
+            'database' => 'admin_innovator',
+            'username' => 'admin_inno',
+            'password' => 'InnovatorC1',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',
