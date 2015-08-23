@@ -62,11 +62,12 @@ class MemberApiController extends Controller {
                     "SetUp" => $setup
                 ]
             ]);
+        } else {
+            return json_encode([
+                "status" => false,
+                "error" => "Invalid Username or Password"
+            ]);
         }
-        return json_encode([
-            "status" => false,
-            "error" => "Invalid Username or Password"
-        ]);
     }
 
     function postNew(Request $request) {

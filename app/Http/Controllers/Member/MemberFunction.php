@@ -40,7 +40,7 @@ class MemberFunction {
         try {
             $member = new Member();
             $member->Email = $request->Email;
-            $member->Password = Hash::make($request->Email);
+            $member->Password = Hash::make($request->Password);
             $member->Status = NewMember;
             $member->save();
         } catch (Exception $e) {
