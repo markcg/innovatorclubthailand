@@ -25,14 +25,7 @@ var memberSystem = {
                         window.location.href = "/member/manage";
                     }
                 } else {
-                    $("#status").empty();
-                    if ($.isArray(response.error)) {
-                        $.each(response.error, function (index, item) {
-                            $("#status").append('<div class="alert alert-danger" role="alert">' + item + '</div>');
-                        });
-                    } else {
-                        $("#status").append('<div class="alert alert-danger" role="alert">' + response.error + '</div>');
-                    }
+                    notifyError(response);
                 }
             });
         });
@@ -59,14 +52,7 @@ var memberSystem = {
                 if (response.status) {
                     window.location.href = "/member/login";
                 } else {
-                    $("#status").empty();
-                    if ($.isArray(response.error)) {
-                        $.each(response.error, function (index, item) {
-                            $("#status").append('<div class="alert alert-danger" role="alert">' + item + '</div>');
-                        });
-                    } else {
-                        $("#status").append('<div class="alert alert-danger" role="alert">' + response.error + '</div>');
-                    }
+                    notifyError(response);
                 }
             });
         });

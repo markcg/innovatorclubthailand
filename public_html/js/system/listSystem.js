@@ -6,6 +6,7 @@ var listSystem = {
             dataType: "json"
         }).done(function (response) {
             $(select).empty();
+            $(select).append("<option></option>");
             $.each(response, function (key, item) {
                 $(select).append("<option value=" + item.id + ">" + item.Name + "</option>");
             });
@@ -18,6 +19,7 @@ var listSystem = {
             dataType: "json"
         }).done(function (response) {
             $(select).empty();
+            $(select).append("<option></option>");
             $.each(response, function (key, item) {
                 $(select).append("<option value=" + item.id + ">" + item.Name + "</option>");
             });
@@ -30,6 +32,7 @@ var listSystem = {
             dataType: "json"
         }).done(function (response) {
             $(select).empty();
+            $(select).append("<option></option>");
             $.each(response, function (key, item) {
                 $(select).append("<option value=" + item.id + ">" + item.Name + "</option>");
             });
@@ -42,6 +45,7 @@ var listSystem = {
             dataType: "json"
         }).done(function (response) {
             $(select).empty();
+            $(select).append("<option></option>");
             $.each(response, function (key, item) {
                 $(select).append("<option value=" + item.id + ">" + item.Name + "</option>");
             });
@@ -54,12 +58,13 @@ var listSystem = {
             dataType: "json"
         }).done(function (response) {
             $(select).empty();
+            $(select).append("<option></option>");
             $.each(response, function (key, item) {
                 $(select).append("<option value=" + item.id + ">" + item.Name + "</option>");
             });
         });
     },
-    provinceList: function (select) {
+    provinceAutocomplete: function (select) {
         $.ajax({
             url: "/category/api/province",
             method: "GET",
@@ -73,6 +78,22 @@ var listSystem = {
             $(select).autocomplete({
                 source: $source,
                 minLength: 2,
+            });
+        });
+    },
+    provinceList: function (select) {
+        $.ajax({
+            url: "/category/api/province",
+            method: "GET",
+            dataType: "json"
+        }).done(function (response) {
+            $source = [];
+            $.each(response, function (key, item) {
+                $(select).empty();
+                $(select).append("<option></option>");
+                $.each(response, function (key, item) {
+                    $(select).append("<option value=" + item.PROVINCE_ID + ">" + item.PROVINCE_NAME + "</option>");
+                });
             });
         });
     },

@@ -3,6 +3,7 @@
 namespace App\Models\Member;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Profile extends Model {
 
@@ -10,7 +11,6 @@ class Profile extends Model {
     public $timestamps = false;
 
     public function member() {
-        return $this->belongsTo('App\Models\Member\Member','MemberId');
+        return $this->belongsTo('App\Models\Member\Member', 'MemberId');
     }
-
 }

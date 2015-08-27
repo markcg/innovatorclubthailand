@@ -39,7 +39,7 @@ class CategoryApiController extends Controller {
     }
 
     function getProvince() {
-        $province = DB::select("SELECT * FROM `province`");
+        $province = DB::select("SELECT * FROM `province` ORDER BY `PROVINCE_NAME` ASC");
         return json_encode($province);
     }
 

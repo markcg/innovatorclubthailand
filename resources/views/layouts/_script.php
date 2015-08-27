@@ -8,3 +8,5 @@
 <script src="/js/helpers/dom/anijs-helper-dom.js" type="text/javascript"></script>
 <script src="/js/config.js" type="text/javascript"></script>
 <script src="/js/system.js" type="text/javascript"></script>
+<script src="/js/system/function.js" type="text/javascript"></script>
+<script src="/js/validator.js" type="text/javascript"></script>

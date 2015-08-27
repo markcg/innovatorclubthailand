@@ -60,18 +60,25 @@ class MemberFunction {
     function AddProfile(Request $request) {
         try {
             $member = Member::findOrFail($request->MemberId);
-            $profile = new Profile();
-            $profile->ProjectState = $request->ProjectState;
-            $profile->MemberGroup = $request->MemberGroup;
-            $profile->PartnerGroup = $request->PartnerGroup;
-            $profile->Location = $request->Location;
-            $profile->Age = $request->Age;
-            if ($request->has('IsStudent')) {
-                $profile->IsStudent = $request->IsStudent;
+            if ($member->profile == null) {
+                $profile = new Profile();
+                $profile->ProjectState = $request->ProjectState;
+                $profile->MemberGroup = $request->MemberGroup;
+                $profile->PartnerGroup = $request->PartnerGroup;
+                $profile->Location = $request->Location;
+                $profile->Age = $request->Age;
+                if ($request->has('IsStudent')) {
+                    $profile->IsStudent = $request->IsStudent;
+                }
+                $member->profile()->save($profile);
+                $member->Status = HasProfile;
+                $member->save();
+            } else {
+                return json_encode([
+                    "status" => false,
+                    "error" => "Information already exist"
+                ]);
             }
-            $member->profile()->save($profile);
-            $member->Status = HasProfile;
-            $member->save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -86,16 +93,23 @@ class MemberFunction {
     function AddRole(Request $request) {
         try {
             $member = Member::findOrFail($request->MemberId);
-            $role = new Role();
-            $role->FirstRole = $request->FirstRole;
-            if ($request->has('SecondRole') && $request->SecondRole != "") {
-                $role->SecondRole = $request->SecondRole;
-            } if ($request->has('ThirdRole') && $request->ThirdRole != "") {
-                $role->ThirdRole = $request->ThirdRole;
+            if ($member->role == null) {
+                $role = new Role();
+                $role->FirstRole = $request->FirstRole;
+                if ($request->has('SecondRole') && $request->SecondRole != "") {
+                    $role->SecondRole = $request->SecondRole;
+                } if ($request->has('ThirdRole') && $request->ThirdRole != "") {
+                    $role->ThirdRole = $request->ThirdRole;
+                }
+                $member->role()->save($role);
+                $member->Status = HasRole;
+                $member->save();
+            } else {
+                return json_encode([
+                    "status" => false,
+                    "error" => "Information already exist"
+                ]);
             }
-            $member->role()->save($role);
-            $member->Status = HasRole;
-            $member->save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -110,15 +124,22 @@ class MemberFunction {
     function AddJoining(Request $request) {
         try {
             $member = Member::findOrFail($request->MemberId);
-            $join = new Joining();
-            if ($request->has('OpenToJoin')) {
-                $join->OpenToJoin = $request->OpenToJoin;
-            } if ($request->has('ReadyToJoin')) {
-                $join->ReadyToJoin = $request->ReadyToJoin;
+            if ($member->role == null) {
+                $join = new Joining();
+                if ($request->has('OpenToJoin')) {
+                    $join->OpenToJoin = $request->OpenToJoin;
+                } if ($request->has('ReadyToJoin')) {
+                    $join->ReadyToJoin = $request->ReadyToJoin;
+                }
+                $member->joining()->save($join);
+                $member->Status = HasJoining;
+                $member->save();
+            } else {
+                return json_encode([
+                    "status" => false,
+                    "error" => "Information already exist"
+                ]);
             }
-            $member->joining()->save($join);
-            $member->Status = HasJoining;
-            $member->save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -133,23 +154,31 @@ class MemberFunction {
     function AddSkill(Request $request) {
         try {
             $member = Member::findOrFail($request->MemberId);
-            $skill = new Skill();
-            $skill->Finance = $request->Finance;
-            $skill->Managing = $request->Managing;
-            $skill->Marketing = $request->Marketing;
-            $skill->ProductM = $request->ProductM;
-            $skill->Sales = $request->Sales;
-            $skill->Technical = $request->Technical;
-            //
-            $skill->FinanceNeed = $request->FinanceNeed;
-            $skill->ManagingNeed = $request->ManagingNeed;
-            $skill->MarketingNeed = $request->MarketingNeed;
-            $skill->ProductMNeed = $request->ProductMNeed;
-            $skill->SalesNeed = $request->SalesNeed;
-            $skill->TechnicalNeed = $request->TechnicalNeed;
-            $member->skill()->save($skill);
-            $member->Status = HasSkill;
-            $member->save();
+            if ($member->skill == null) {
+                $skill = new Skill();
+                $skill->Finance = $request->Finance;
+                $skill->Managing = $request->Managing;
+                $skill->Marketing = $request->Marketing;
+                $skill->ProductM = $request->ProductM;
+                $skill->Sales = $request->Sales;
+                $skill->Technical = $request->Technical;
+                //
+                $skill->FinanceNeed = $request->FinanceNeed;
+                $skill->ManagingNeed = $request->ManagingNeed;
+                $skill->MarketingNeed = $request->MarketingNeed;
+                $skill->ProductMNeed = $request->ProductMNeed;
+                $skill->SalesNeed = $request->SalesNeed;
+                $skill->TechnicalNeed = $request->TechnicalNeed;
+                $member->skill()->save($skill);
+                $member->Status = HasSkill;
+
+                $member->save();
+            } else {
+                return json_encode([
+                    "status" => false,
+                    "error" => "Information already exist"
+                ]);
+            }
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -164,20 +193,28 @@ class MemberFunction {
     function AddExperience(Request $request) {
         try {
             $member = Member::findOrFail($request->MemberId);
-            $experience = new Experience();
-            $experience->FirstIndustry = $request->FirstIndustry;
-            $experience->FirstExperience = $request->FirstExperience;
-            if ($request->has('SecondIndustry') && $request->has('SecondExperience')) {
-                $experience->SecondIndustry = $request->SecondIndustry;
-                $experience->SecondExperience = $request->SecondExperience;
+            if ($member->experience == null) {
+                $experience = new Experience();
+                $experience->FirstIndustry = $request->FirstIndustry;
+                $experience->FirstExperience = $request->FirstExperience;
+                if ($request->has('SecondIndustry') && $request->has('SecondExperience')) {
+                    $experience->SecondIndustry = $request->SecondIndustry;
+                    $experience->SecondExperience = $request->SecondExperience;
+                }
+                if ($request->has('ThirdIndustry') && $request->has('ThirdExperience')) {
+                    $experience->ThirdIndustry = $request->ThirdIndustry;
+                    $experience->ThirdExperience = $request->ThirdExperience;
+                }
+                $member->experience()->save($experience);
+                $member->Status = HasExperience;
+
+                $member->save();
+            } else {
+                return json_encode([
+                    "status" => false,
+                    "error" => "Information already exist"
+                ]);
             }
-            if ($request->has('ThirdIndustry') && $request->has('ThirdExperience')) {
-                $experience->ThirdIndustry = $request->ThirdIndustry;
-                $experience->ThirdExperience = $request->ThirdExperience;
-            }
-            $member->experience()->save($experience);
-            $member->Status = HasExperience;
-            $member->save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -192,19 +229,27 @@ class MemberFunction {
     function AddNeed(Request $request) {
         try {
             $member = Member::findOrFail($request->MemberId);
-            $need = new Need();
-            $need->Investment = $request->Investment;
-            $need->TimeCommit = $request->TimeCommit;
-            $need->PartnerFirstRole = $request->PartnerFirstRole;
-            if ($request->has('PartnerSecondRole')) {
-                $need->PartnerSecondRole = $request->PartnerSecondRole;
+            if ($member->need == null) {
+                $need = new Need();
+                $need->Investment = $request->Investment;
+                $need->TimeCommit = $request->TimeCommit;
+                $need->PartnerFirstRole = $request->PartnerFirstRole;
+                if ($request->has('PartnerSecondRole')) {
+                    $need->PartnerSecondRole = $request->PartnerSecondRole;
+                }
+                if ($request->has('PartnerThirdRole')) {
+                    $need->PartnerThirdRole = $request->PartnerThirdRole;
+                }
+                $member->need()->save($need);
+                $member->Status = HasNeed;
+
+                $member->save();
+            } else {
+                return json_encode([
+                    "status" => false,
+                    "error" => "Information already exist"
+                ]);
             }
-            if ($request->has('PartnerThirdRole')) {
-                $need->PartnerThirdRole = $request->PartnerThirdRole;
-            }
-            $member->need()->save($need);
-            $member->Status = HasNeed;
-            $member->save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -219,13 +264,21 @@ class MemberFunction {
     function AddContact(Request $request) {
         try {
             $member = Member::findOrFail($request->MemberId);
-            $contact = new Contact();
-            $contact->Mobile = $request->Mobile;
-            $contact->Skype = $request->Skype;
-            $contact->Line = $request->Line;
-            $member->contact()->save($contact);
-            $member->Status = HasContact;
-            $member->save();
+            if ($member->contact == null) {
+                $contact = new Contact();
+                $contact->Mobile = $request->Mobile;
+                $contact->Skype = $request->Skype;
+                $contact->Line = $request->Line;
+                $member->contact()->save($contact);
+                $member->Status = HasContact;
+
+                $member->save();
+            } else {
+                return json_encode([
+                    "status" => false,
+                    "error" => "Information already exist"
+                ]);
+            }
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -240,14 +293,23 @@ class MemberFunction {
     function AddSocial(Request $request) {
         try {
             $member = Member::findOrFail($request->MemberId);
-            $social = new Social();
-            $social->Mobile = $request->Mobile;
-            $social->Skype = $request->Skype;
-            $social->Line = $request->Line;
-            $member->social()->save($social);
-            $member->Status = HasSocial;
-            $member->save();
+            if ($member->social == null) {
+                $social = new Social();
+                $social->Facebook = $request->Facebook;
+                $social->Twitter = $request->Twitter;
+                $social->Google = $request->Google;
+                $member->social()->save($social);
+                $member->Status = HasSocial;
+
+                $member->save();
+            } else {
+                return json_encode([
+                    "status" => false,
+                    "error" => "Information already exist"
+                ]);
+            }
         } catch (Exception $e) {
+
             return json_encode([
                 "status" => false,
                 "error" => $e
@@ -266,6 +328,7 @@ class MemberFunction {
             $member->save();
         } catch (Exception $e) {
             return json_encode([
+
                 "status" => false,
                 "error" => $e
             ]);
@@ -290,7 +353,9 @@ class MemberFunction {
                 $member->profile->IsStudent = $request->IsStudent;
             }
             $member->profile->save();
-            $member->save();
+
+            $member->
+                    save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -312,7 +377,9 @@ class MemberFunction {
                 $member->role->ThirdRole = $request->ThirdRole;
             }
             $member->role->save();
-            $member->save();
+
+            $member->
+                    save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -333,7 +400,9 @@ class MemberFunction {
                 $member->join->ReadyToJoin = $request->ReadyToJoin;
             }
             $member->joining->save();
-            $member->save();
+
+            $member->
+                    save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -363,7 +432,9 @@ class MemberFunction {
             $member->skill->SalesNeed = $request->SalesNeed;
             $member->skill->TechnicalNeed = $request->TechnicalNeed;
             $member->skill->save();
-            $member->save();
+
+            $member->
+                    save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -389,7 +460,9 @@ class MemberFunction {
                 $member->experience->ThirdExperience = $request->ThirdExperience;
             }
             $member->experience->save();
-            $member->save();
+
+            $member->
+                    save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -414,7 +487,9 @@ class MemberFunction {
                 $member->need->PartnerThirdRole = $request->PartnerThirdRole;
             }
             $member->need->save();
-            $member->save();
+
+            $member->
+                    save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -433,7 +508,9 @@ class MemberFunction {
             $member->contact->Skype = $request->Skype;
             $member->contact->Line = $request->Line;
             $member->contact->save();
-            $member->save();
+
+            $member->
+                    save();
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -452,6 +529,7 @@ class MemberFunction {
             $member->social->Skype = $request->Skype;
             $member->social->Line = $request->Line;
             $member->social->save();
+
             $member->save();
         } catch (Exception $e) {
             return json_encode([
@@ -466,16 +544,38 @@ class MemberFunction {
 
     function EditDetail(Request $request) {
         try {
-            $img = Image::make($request->file('Image'));
             $member = Member::findOrFail($request->MemberId);
             $member->profile->Firstname = $request->Firstname;
             $member->profile->Middlename = $request->Middlename;
             $member->profile->Lastname = $request->Lastname;
             $member->profile->About = $request->About;
-            $member->profile->Image = $img->encode('data-url');
             $member->profile->Video = $request->Video;
-            $member->profile()->save();
+
+            $member->profile->save();
             $member->Status = HasDetail;
+
+            $member->
+                    save();
+        } catch (Exception $e) {
+            return json_encode([
+                "status" => false,
+                "error" => $e
+            ]);
+        }
+        return json_encode([
+            "status" => true,
+            "data" => [
+                "MemberId" => $member->id
+            ],
+        ]);
+    }
+
+    function EditImage(Request $request) {
+        try {
+            $member = Member::findOrFail($request->MemberId);
+            $img = Image::make($request->file('Image'));
+            $member->profile->Image = $img->encode('data-url');
+            $member->profile->save();
             $member->save();
         } catch (Exception $e) {
             return json_encode([
@@ -488,11 +588,11 @@ class MemberFunction {
         ]);
     }
 
-    function EditImage(Request $request) {
+    function EditImageEncoded(Request $request) {
         try {
             $member = Member::findOrFail($request->MemberId);
-            $img = Image::make($request->file('Image'));
-            $member->profile->Image = $img->encode('data-url');
+            $member->profile->Image = $request->Image;
+            $member->profile->save();
             $member->save();
         } catch (Exception $e) {
             return json_encode([
@@ -534,6 +634,7 @@ class MemberFunction {
             $member = Member::findOrFail($request->MemberId);
             $member->Status = IsMember;
             $member->save();
+            Session::put("Member", $member);
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -542,6 +643,9 @@ class MemberFunction {
         }
         return json_encode([
             "status" => true,
+            "data" => [
+                "MemberId" => $member->id
+            ],
         ]);
     }
 

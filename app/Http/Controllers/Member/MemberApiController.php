@@ -21,8 +21,8 @@ class MemberApiController extends Controller {
 
     function __construct() {
         $this->system = new MemberFunction();
-        $this->middleware("auth", ['except' => ['postLogin', 'postNew']]);
-        $this->middleware("member", ['except' => ['postLogin', 'postNew']]);
+        //$this->middleware("auth", ['except' => ['postLogin', 'postNew']]);
+        //$this->middleware("member", ['except' => ['postLogin', 'postNew']]);
     }
 
 //----Get
@@ -134,9 +134,9 @@ class MemberApiController extends Controller {
             ]);
         }
         if ($request->Function == "Add") {
-            $this->system->AddProfile($request);
+            return $this->system->AddProfile($request);
         } else if ($request->Function == "Edit") {
-            $this->system->EditProfile($request);
+            return $this->system->EditProfile($request);
         } else {
             return json_encode([
                 "status" => false,
@@ -161,9 +161,9 @@ class MemberApiController extends Controller {
             ]);
         }
         if ($request->Function == "Add") {
-            $this->system->AddRole($request);
+            return $this->system->AddRole($request);
         } else if ($request->Function == "Edit") {
-            $this->system->EditRole($request);
+            return $this->system->EditRole($request);
         } else {
             return json_encode([
                 "status" => false,
@@ -185,9 +185,9 @@ class MemberApiController extends Controller {
             ]);
         }
         if ($request->Function == "Add") {
-            $this->system->AddJoining($request);
+            return $this->system->AddJoining($request);
         } else if ($request->Function == "Edit") {
-            $this->system->EditJoining($request);
+            return $this->system->EditJoining($request);
         } else {
             return json_encode([
                 "status" => false,
@@ -200,19 +200,19 @@ class MemberApiController extends Controller {
         $validator = Validator::make($request->all(), [
                     'Function' => 'required',
                     'MemberId' => 'required|numeric',
-                    'Finance' => 'required|numeric|max:3',
-                    'Managing' => 'required|numeric|max:3',
-                    'Marketing' => 'required|numeric|max:3',
-                    'ProductM' => 'required|numeric|max:3',
-                    'Sales' => 'required|numeric|max:3',
-                    'Technical' => 'required|numeric|max:3',
+                    'Finance' => 'required|numeric|max:5',
+                    'Managing' => 'required|numeric|max:5',
+                    'Marketing' => 'required|numeric|max:5',
+                    'ProductM' => 'required|numeric|max:5',
+                    'Sales' => 'required|numeric|max:5',
+                    'Technical' => 'required|numeric|max:5',
                     //
-                    'FinanceNeed' => 'required|numeric|max:3',
-                    'ManagingNeed' => 'required|numeric|max:3',
-                    'MarketingNeed' => 'required|numeric|max:3',
-                    'ProductMNeed' => 'required|numeric|max:3',
-                    'SalesNeed' => 'required|numeric|max:3',
-                    'TechnicalNeed' => 'required|numeric|max:3',
+                    'FinanceNeed' => 'required|numeric|max:5',
+                    'ManagingNeed' => 'required|numeric|max:5',
+                    'MarketingNeed' => 'required|numeric|max:5',
+                    'ProductMNeed' => 'required|numeric|max:5',
+                    'SalesNeed' => 'required|numeric|max:5',
+                    'TechnicalNeed' => 'required|numeric|max:5',
         ]);
 
         if ($validator->fails()) {
@@ -222,9 +222,9 @@ class MemberApiController extends Controller {
             ]);
         }
         if ($request->Function == "Add") {
-            $this->system->AddSkill($request);
+            return $this->system->AddSkill($request);
         } else if ($request->Function == "Edit") {
-            $this->system->EditSkill($request);
+            return $this->system->EditSkill($request);
         } else {
             return json_encode([
                 "status" => false,
@@ -252,9 +252,9 @@ class MemberApiController extends Controller {
             ]);
         }
         if ($request->Function == "Add") {
-            $this->system->AddExperience($request);
+            return $this->system->AddExperience($request);
         } else if ($request->Function == "Edit") {
-            $this->system->EditExperience($request);
+            return $this->system->EditExperience($request);
         } else {
             return json_encode([
                 "status" => false,
@@ -268,7 +268,7 @@ class MemberApiController extends Controller {
                     'Function' => 'required',
                     'MemberId' => 'required|numeric',
                     'Investment' => 'required|numeric',
-                    'TimeCommint' => 'required|numeric',
+                    'TimeCommit' => 'required|numeric',
                     'PartnerFirstRole' => 'required|numeric',
                     'PartnerSecondRole' => 'numeric',
                     'PartnerThirdRole' => 'numeric',
@@ -281,9 +281,9 @@ class MemberApiController extends Controller {
             ]);
         }
         if ($request->Function == "Add") {
-            $this->system->AddNeed($request);
+            return $this->system->AddNeed($request);
         } else if ($request->Function == "Edit") {
-            $this->system->EditNeed($request);
+            return $this->system->EditNeed($request);
         } else {
             return json_encode([
                 "status" => false,
@@ -296,9 +296,9 @@ class MemberApiController extends Controller {
         $validator = Validator::make($request->all(), [
                     'Function' => 'required',
                     'MemberId' => 'required|numeric',
-                    'Mobile' => 'required|max:255',
-                    'Skype' => 'required|max:255',
-                    'Line' => 'required|max:255',
+                    'Mobile' => 'numeric',
+                    'Skype' => 'max:255',
+                    'Line' => 'max:255',
         ]);
 
         if ($validator->fails()) {
@@ -308,9 +308,9 @@ class MemberApiController extends Controller {
             ]);
         }
         if ($request->Function == "Add") {
-            $this->system->AddContact($request);
+            return $this->system->AddContact($request);
         } else if ($request->Function == "Edit") {
-            $this->system->EditContact($request);
+            return $this->system->EditContact($request);
         } else {
             return json_encode([
                 "status" => false,
@@ -323,9 +323,9 @@ class MemberApiController extends Controller {
         $validator = Validator::make($request->all(), [
                     'Function' => 'required',
                     'MemberId' => 'required|numeric',
-                    'Mobile' => 'required|max:255',
-                    'Skype' => 'required|max:255',
-                    'Line' => 'required|max:255',
+                    'Facebook' => 'max:255',
+                    'Twitter' => 'max:255',
+                    'Google' => 'max:255',
         ]);
 
         if ($validator->fails()) {
@@ -335,9 +335,9 @@ class MemberApiController extends Controller {
             ]);
         }
         if ($request->Function == "Add") {
-            $this->system->AddSocial($request);
+            return $this->system->AddSocial($request);
         } else if ($request->Function == "Edit") {
-            $this->system->EditSocial($request);
+            return $this->system->EditSocial($request);
         } else {
             return json_encode([
                 "status" => false,
@@ -348,13 +348,11 @@ class MemberApiController extends Controller {
 
     function postDetail(Request $request) {
         $validator = Validator::make($request->all(), [
-                    'Function' => 'required',
                     'MemberId' => 'required|numeric',
                     'Firstname' => 'alpha|max:255',
                     'Middlename' => 'alpha|max:255',
                     'Lastname' => 'alpha|max:255',
                     'About' => 'required',
-                    'Image' => 'image',
                     'Video' => 'active_url',
         ]);
 
@@ -364,16 +362,27 @@ class MemberApiController extends Controller {
                 "error" => $validator->errors()->all()
             ]);
         }
-        if ($request->Function == "Add") {
-            $this->system->AddDetail($request);
-        } else if ($request->Function == "Edit") {
-            $this->system->EditDetail($request);
-        } else {
+        return $this->system->EditDetail($request);
+    }
+
+    function postDetailWithEncoded(Request $request) {
+        $validator = Validator::make($request->all(), [
+                    'MemberId' => 'required|numeric',
+                    'Firstname' => 'required|alpha|max:255',
+                    'Middlename' => 'alpha|max:255',
+                    'Lastname' => 'alpha|max:255',
+                    'About' => 'required',
+                    'Video' => 'active_url',
+        ]);
+
+        if ($validator->fails()) {
             return json_encode([
                 "status" => false,
-                "error" => "Invalid Function"
+                "error" => $validator->errors()->all()
             ]);
         }
+        $this->system->EditImageEncoded($request);
+        return $this->system->EditDetail($request);
     }
 
     function postImage(Request $request) {
@@ -390,15 +399,30 @@ class MemberApiController extends Controller {
             ]);
         }
         if ($request->Function == "Add") {
-            $this->system->AddImage($request);
+            return $this->system->AddImage($request);
         } else if ($request->Function == "Edit") {
-            $this->system->EditImage($request);
+            return $this->system->EditImage($request);
         } else {
             return json_encode([
                 "status" => false,
                 "error" => "Invalid Function"
             ]);
         }
+    }
+
+    function postImageEncoded(Request $request) {
+        $validator = Validator::make($request->all(), [
+                    'MemberId' => 'required|numeric',
+                    'Image' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return json_encode([
+                "status" => false,
+                "error" => $validator->errors()->all()
+            ]);
+        }
+        return $this->system->EditImageEncoded($request);
     }
 
     function postComplete(Request $request) {

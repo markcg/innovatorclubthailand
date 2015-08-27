@@ -34,11 +34,13 @@ class MemberController extends Controller {
 
     function getProfile($id) {
         try {
-            $member = \App\Models\Member::findOrFail($id);
+            $member = Member::findOrFail($id);
         } catch (Exception $e) {
             return redirect()->back();
         }
-        return view("member.profile")->with($member);
+        return view("member.profile")->with([
+                    "member" => $member
+        ]);
     }
 
     function getSetUp() {
@@ -63,7 +65,7 @@ class MemberController extends Controller {
         if ($member->Status != IsMember) {
             return redirect("/member/set-up");
         } else {
-            return view("member.manage")->with(["member" => $member]);
+            return view("member.profile")->with(["member" => $member]);
         }
     }
 
