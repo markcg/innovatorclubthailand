@@ -23,7 +23,7 @@ Route::controllers([
     //----Category----
     'category/api' => 'Category\CategoryApiController',
     //----Other----
-    'project' => 'ProjectController',
+    'project' => 'Project\ProjectController',
     'article' => 'ArticleController',
     '' => 'HomeController'
 ]);

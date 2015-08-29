@@ -65,8 +65,12 @@ class MemberController extends Controller {
         if ($member->Status != IsMember) {
             return redirect("/member/set-up");
         } else {
-            return view("member.profile")->with(["member" => $member]);
+            return view("member.manage")->with(["member" => $member]);
         }
+    }
+
+    function getMatching() {
+        return view("member.matching");
     }
 
 }
