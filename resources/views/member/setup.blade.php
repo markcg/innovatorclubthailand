@@ -127,17 +127,4 @@
                                     });
                                 });
 </script>
-<script>
-    $("body").vegas({
-        slides: [
-            {src: "/image/landing/slides/1.jpg"},
-        ],
-        overlay: true
-    });
-    $('#succes-story').carousel({
-        //interval: 2000,
-        pause: "hover",
-        wrap: true,
-    });
-</script>
 @endsection

@@ -11,12 +11,12 @@ use App\Models\Category\Role;
 @section('content')
 <div class="row">
     <div class="container" style="text-align: center;" >
-        <div style="text-align: left;font-size: 80px; color: white;overflow: hidden;">
+        <div style="text-align: left;font-size: 80px; color: black;overflow: hidden;">
             <div class="u-pull-left">Profile</div>
-<!--            <div class="u-pull-right">
-                <div class="u-pull-right"><a href="/member/profile/{{$member->id}}"><button class="btn btn-success">แสดงโปรไฟล์</button></a></div>
-                <div class="u-pull-right"><a href="/project/manage"><button class="btn btn-success">จัดการโปรเจค</button></a></div>
-            </div>-->
+            <!--            <div class="u-pull-right">
+                            <div class="u-pull-right"><a href="/member/profile/{{$member->id}}"><button class="btn btn-success">แสดงโปรไฟล์</button></a></div>
+                            <div class="u-pull-right"><a href="/project/manage"><button class="btn btn-success">จัดการโปรเจค</button></a></div>
+                        </div>-->
         </div>
     </div>
 </div>
@@ -96,17 +96,5 @@ use App\Models\Category\Role;
 @endsection
 @section('script')
 <script src="/js/vegas.min.js" type="text/javascript"></script>
-<script>
-                                                $("body").vegas({
-                                        slides: [
-                                        {src: "/image/landing/slides/3.jpg"},
-                                        ],
-                                                overlay: false
-                                        });
-                                                $('#succes-story').carousel({
-//interval: 2000,
-                                        pause: "hover",
-                                                wrap: true,
-                                        });</script>
 <script src="/js/system/business/businessSystem.js" type="text/javascript"></script>
 @endsection
