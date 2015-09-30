@@ -233,7 +233,7 @@ var setupSystem = {
                 }).done(function (response) {
                     if (response.status) {
                         //console.log(response.data);
-                        window.location.href = "/member/profile/" + response.data.MemberId;
+                        window.location.href = "/member/manage";
 //                        $("#status").empty();
 //                        $("#detailNext").css("display", "inline-block");
 //                        $("#status").append('<div class="alert alert-success" role="alert">บันทึกข้อมูลเรียบร้อย กรุณากดปุ่ม ต่อไป</div>');
