@@ -3,12 +3,13 @@
 namespace App\Http\Controllers\Member;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Session;
-use Illuminate\Http\Request;
-use App\Models\Member\Member;
 use App\Http\Controllers\Member\MemberFunction;
+use App\Models\Business\Business;
+use App\Models\Member\Member;
+use Exception;
+use Illuminate\Support\Facades\Session;
+use function redirect;
+use function view;
 
 class MemberController extends Controller {
 
@@ -58,14 +59,16 @@ class MemberController extends Controller {
 
     function getManage() {
         try {
-            $member = Session::get("Member");
+            $member = Member::findOrFail(Session::get('MemberId'));
+            $startup = Business::where("MemberId", "=", Session::get('MemberId'))->where("Category", "=", 1)->first();
+            $investor = Business::where("MemberId", "=", Session::get('MemberId'))->where("Category", "=", 2)->first();
         } catch (Exception $e) {
             return redirect()->back();
         }
         if ($member->Status != IsMember) {
             return redirect("/member/set-up");
         } else {
-            return view("member.manage")->with(["member" => $member]);
+            return view("member.manage")->with(["member" => $member, "startup" => $startup, "investor" => $investor]);
         }
     }
 

@@ -171,7 +171,7 @@ var setupSystem = {
             method: "POST",
             dataType: "json",
             data: {
-                Function: "Add",
+                Function: "Edit",
                 MemberId: $("#MemberId").val(),
                 Mobile: $("#Mobile").val(),
                 Skype: $("#Skype").val(),
@@ -184,7 +184,7 @@ var setupSystem = {
                     method: "POST",
                     dataType: "json",
                     data: {
-                        Function: "Add",
+                        Function: "Edit",
                         MemberId: $("#MemberId").val(),
                         Facebook: $("#Facebook").val(),
                         Twitter: $("#Twitter").val(),
@@ -192,10 +192,11 @@ var setupSystem = {
                     }
                 }).done(function (response) {
                     if (response.status) {
-                        $("#status").empty();
-                        $("#contactNext").css("display", "inline-block");
-                        $("#status").append('<div class="alert alert-success" role="alert">บันทึกข้อมูลเรียบร้อย กรุณากดปุ่ม ต่อไป</div>');
-                        $("#progressBar").width("100%");
+//                        $("#status").empty();
+//                        $("#contactNext").css("display", "inline-block");
+//                        $("#status").append('<div class="alert alert-success" role="alert">บันทึกข้อมูลเรียบร้อย กรุณากดปุ่ม ต่อไป</div>');
+//                        $("#progressBar").width("100%");
+                        window.location.href = "/member/profile/" + response.data.MemberId;
                     } else {
                         notifyError(response);
                     }
@@ -214,8 +215,8 @@ var setupSystem = {
                 Function: "Add",
                 MemberId: $("#MemberId").val(),
                 Firstname: $("#FirstName").val(),
-                Middlename: $("#MiddleName").val(),
                 Lastname: $("#LastName").val(),
+                Location: $("#Location").val(),
                 Image: $("#Image").val(),
                 About: $("#About").val(),
                 Video: $("#Video").val(),
@@ -233,6 +234,10 @@ var setupSystem = {
                     if (response.status) {
                         //console.log(response.data);
                         window.location.href = "/member/profile/" + response.data.MemberId;
+//                        $("#status").empty();
+//                        $("#detailNext").css("display", "inline-block");
+//                        $("#status").append('<div class="alert alert-success" role="alert">บันทึกข้อมูลเรียบร้อย กรุณากดปุ่ม ต่อไป</div>');
+//                        $("#progressBar").width("100%");
                     } else {
                         notifyError(response);
                     }

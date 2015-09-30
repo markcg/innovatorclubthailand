@@ -35,10 +35,8 @@
     $("body").vegas({
         slides: [
             {src: "/image/landing/slides/1.jpg"},
-            {src: "/image/landing/slides/2.jpg"},
-            {src: "/image/landing/slides/3.jpg"},
         ],
-        overlay: true
+        overlay: false
     });
     $('#succes-story').carousel({
         //interval: 2000,

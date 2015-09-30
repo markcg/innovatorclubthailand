@@ -12,7 +12,7 @@
  */
 
 Route::controllers([
-    //----Admin----
+//----Admin----
     'admin/article' => 'Admin\AdminArticleController',
     'admin/member' => 'Admin\AdminMemberController',
     'admin/project' => 'Admin\AdminProjectController',
@@ -22,7 +22,10 @@ Route::controllers([
     'member' => 'Member\MemberController',
     //----Category----
     'category/api' => 'Category\CategoryApiController',
-    //----Other----
+    //----Business----
+    'business/api' => 'Business\BusinessApiController',
+    'business' => 'Business\BusinessController',
+//----Other----
     'project' => 'Project\ProjectController',
     'article' => 'ArticleController',
     '' => 'HomeController'

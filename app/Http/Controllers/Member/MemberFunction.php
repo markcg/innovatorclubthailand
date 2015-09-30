@@ -35,6 +35,20 @@ define("HasDetail", 11);
 class MemberFunction {
 
     //------ New Data ---------------
+    function prepareNewMember(Member $member) {
+        try {
+            $profile = new Profile();
+            $member->profile()->save($profile);
+            $contact = new Contact();
+            $member->contact()->save($contact);
+            $social = new Social();
+            $member->social()->save($social);
+            $member->save();
+            return true;
+        } catch (Exception $e) {
+            return var_dump($e);
+        }
+    }
 
     function AddMember(Request $request) {
         try {
@@ -43,6 +57,7 @@ class MemberFunction {
             $member->Password = Hash::make($request->Password);
             $member->Status = NewMember;
             $member->save();
+            $this->prepareNewMember($member);
         } catch (Exception $e) {
             return json_encode([
                 "status" => false,
@@ -550,6 +565,7 @@ class MemberFunction {
             $member->profile->Lastname = $request->Lastname;
             $member->profile->About = $request->About;
             $member->profile->Video = $request->Video;
+            $member->profile->Location = $request->Location;
 
             $member->profile->save();
             $member->Status = HasDetail;

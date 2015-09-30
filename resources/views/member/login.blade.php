@@ -2,7 +2,7 @@
 @section('content')
 <div class="row" style="margin-top: 100px;">
     <div class="container" style="text-align: center;" >
-        <div class="column"><h1>ลงชื่อเข้าใช้</h1></div>
+        <div class="column" style="color: white;"><h1>ลงชื่อเข้าใช้</h1></div>
         <div class="column" id="status"></div>
         <form id="login">
             <input type="hidden" id="token" name="_token" value="<?php echo csrf_token(); ?>">
@@ -33,11 +33,9 @@
 <script>
     $("body").vegas({
         slides: [
-            {src: "/image/landing/slides/1.jpg"},
             {src: "/image/landing/slides/2.jpg"},
-            {src: "/image/landing/slides/3.jpg"},
         ],
-        overlay: true
+        overlay: false
     });
     $('#succes-story').carousel({
         //interval: 2000,

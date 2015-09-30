@@ -8,7 +8,10 @@ function notifyError(response) {
         $("#status").append('<div class="alert alert-danger" role="alert">' + response.error + '</div>');
     }
 }
-
+function notifySuccess() {
+    $("#status").empty();
+    $("#status").append('<div class="alert alert-danger" role="alert">แก้ไขเสร็จสิ้น</div>');
+}
 function readImage(input) {
     if (input.files && input.files[0]) {
         var FR = new FileReader();

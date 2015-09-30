@@ -9,11 +9,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Member\MemberFunction;
 use App\Models\Member\Member;
-use App\Models\Category\Industry;
-use App\Models\Category\MemberGroup;
-use App\Models\Category\MemberStatus;
-use App\Models\Category\ProjectState;
-use App\Models\Category\Role;
 
 class MemberApiController extends Controller {
 
@@ -352,6 +347,7 @@ class MemberApiController extends Controller {
                     'Firstname' => 'alpha|max:255',
                     'Middlename' => 'alpha|max:255',
                     'Lastname' => 'alpha|max:255',
+                    'Location' => 'required|numeric',
                     'About' => 'required',
                     'Video' => 'active_url',
         ]);
@@ -371,6 +367,7 @@ class MemberApiController extends Controller {
                     'Firstname' => 'required|alpha|max:255',
                     'Middlename' => 'alpha|max:255',
                     'Lastname' => 'alpha|max:255',
+                    'Location' => 'required|numeric',
                     'About' => 'required',
                     'Video' => 'active_url',
         ]);
