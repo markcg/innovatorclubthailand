@@ -20,6 +20,7 @@ use App\Models\Category\Role;
                 @else
                 Business Profile
                 @endif
+                <input type="hidden" id="businessId" value="{{$business->id}}">
             </div>
             <div class="u-pull-right">
                 <div class="u-pull-right"><a><button class="btn btn-success">แสดงโปรไฟล์ธุรกิจ</button></a></div>
@@ -28,16 +29,47 @@ use App\Models\Category\Role;
     </div>
 </div>
 <div class="row">
+    <div class="container">
+        <div class="column" id="status" style="text-align: center;"></div>
+    </div>
+</div>
+<div class="row">
     <div class="container-fluid">
         <div class="row panel panel-info">
             <div class="container" style="text-align: center;" >
                 <div class="panel-body">
-                    <div class="col-md-4"><img src="" height="200" width="300"></div>
+                    <div class="col-md-4">
+                        <div><img id="displayImage" src="{{$business->profile->Image}}" height="200" width="300"></div>
+                    </div>
                     <div class="col-md-5" style="text-align: left;">
-                        <div class="column" style="font-size: 20px;">ชื่อธุรกิจของคุณ</div>
-                        <div class="column" style="font-size: 15px;">จังหวัด</div>
-                        <div class="column" style="font-size: 15px;">รายละเอียด</div>
-                        <div class="column" style="font-size: 12px;"><a>เพิ่มเว็บไซต์</a></div>
+                        <div class="column" style="font-size: 15px;">
+                            <div style="float:left;"><input type="text" id="name" placeholder="เพิ่มชื่อธุรกิจของคุณ" value="<?php
+                                if ($business->Name != null) {
+                                    echo $business->Name;
+                                }
+                                ?>"></div>
+                            <div style="float:left;"><input type="button" value="บันทึก" id="submitName"></div>
+                        </div>
+                        <div class="column" style="font-size: 15px;">
+                            <input type="hidden" id="defaultLocation" value="{{$business->Location}}">
+                            <select class="form-control province" id="Location" required></select>
+                        </div>
+                        <div class="column" style="font-size: 12px;">
+                            <div style="float:left;"><input type="text" name="name" placeholder="เพิ่มเว็บไซต์ของคุณ" value="<?php
+                                if ($business->profile->Website != null) {
+                                    echo $business->profile->Website;
+                                }
+                                ?>"></div>
+                            <div style="float:left;"><input type="button" value="บันทึก"></div>
+                        </div>
+                        <div class="column">
+                            <label for="exampleInputEmail2">รูปภาพ</label>
+                            <input type="file" class="form-control" id="ImageUploader" onchange="readImage(this);" placeholder="รูปภาพ">
+                            <input type="hidden" id="Image">
+                        </div>
+                        <div style="float: left;">
+                            <input type="button" value="บันทึก" id="submitImage">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -49,7 +81,11 @@ use App\Models\Category\Role;
         <div class="panel panel-primary">
             <div class="panel-heading"><img src="https://www.cofounderslab.com/themes/basic/images/head_icons/experience.png">ภาพรวมธุรกิจของคุณ</div>
             <div class="panel-body" style="font-size: 20px;">
-
+                <div>
+                    <textarea id="Description" style="width: 100%;">@if($business->Description != ""){{$business->Description}}@else อธิบายภาพรวมวิสัยทัศน์ของคุณ @endif
+                    </textarea>
+                </div>
+                <div style="float:left;"><input id="submitDesc" type="button" value="บันทึก"></div>
             </div>
         </div>
     </div>
@@ -65,6 +101,12 @@ use App\Models\Category\Role;
                         <div class="panel-heading">วิดีโอธุรกิจ</div>
                         <div class="panel-body">
                             <div class="column" style="text-align: center;"><iframe width="550" height="300"></iframe></div>
+                            <div style="float:left;"><input type="text" id="Video" name="video" placeholder="เพิ่ม URL วิดีโอของคุณ" value="<?php
+                                if ($business->profile->Website != null) {
+                                    echo $business->profile->Video;
+                                }
+                                ?>"></div>
+                            <div style="float:left;"><input type="button" id="submitVideo" value="บันทึก"></div>
                         </div>
                     </div>
 
@@ -96,13 +138,18 @@ use App\Models\Category\Role;
                 <div class="column" style="text-align: left;">
                     <form>
                         <textarea name="editor1" id="editor1" rows="10" cols="80">
-                        @if($business->Category == 1)
-                        อธิบายแนวคิด ความต้องการ การทำงานของธุรกิจคุณ
+                        @if($business->profile->Detail != "")
+                            {{$business->profile->Detail}}
                         @else
-                        อธิบายแนวติด แนวทางการลงทุนของคุณ กลุ่มที่คุณสนใจลงทุนด้วย
+                            @if($business->Category == 1)
+                            อธิบายแนวคิด ความต้องการ หรือ การทำงานของธุรกิจคุณ
+                            @else
+                            อธิบายแนวติด แนวทางการลงทุนของคุณ หรือ กลุ่มที่คุณสนใจลงทุนด้วย
+                            @endif
                         @endif
                         </textarea>
                     </form>
+                    <div style="float:left;"><input type="button" id="submitDetail" value="บันทึก"></div>
                 </div>
             </div>
         </div>
@@ -119,21 +166,26 @@ use App\Models\Category\Role;
 @section('script')
 <script src="/js/vegas.min.js" type="text/javascript"></script>
 <script src="/js/ckeditor/ckeditor.js" type="text/javascript"></script>
+<script src="/js/system/listSystem.js" type="text/javascript"></script>
+<script src="/js/system/business/businessSystem.js" type="text/javascript"></script>
 <script>
-    $(function () {
-        CKEDITOR.replace('editor1');
-        $("body").vegas({
-            slides: [
-                {src: "/image/landing/slides/3.jpg"},
-            ],
-            overlay: false
-        });
-        $('#succes-story').carousel({
+                                $(function () {
+                                    listSystem.provinceList("#Location", $('#defaultLocation').val());
+                                    businessSystem.initialize();
+                                    CKEDITOR.replace('editor1');
+                                    $("body").vegas({
+                                        slides: [
+                                            {src: "/image/landing/slides/3.jpg"},
+                                        ],
+                                        overlay: false
+                                    });
+                                    $('#succes-story').carousel({
 //interval: 2000,
-            pause: "hover",
-            wrap: true,
-        });
-    })
+                                        pause: "hover",
+                                        wrap: true,
+                                    });
+
+                                });
 
 </script>
 @endsection

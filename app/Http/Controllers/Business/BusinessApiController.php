@@ -68,7 +68,7 @@ class BusinessApiController extends Controller {
             ]);
         }
         try {
-            $business = Business::findOrFail($request->MemberId);
+            $business = Business::findOrFail($request->BusinessId);
             $business->Name = $request->Name;
             $business->save();
         } catch (Exception $e) {
@@ -95,7 +95,7 @@ class BusinessApiController extends Controller {
             ]);
         }
         try {
-            $business = Business::findOrFail($request->MemberId);
+            $business = Business::findOrFail($request->BusinessId);
             $business->Description = $request->Description;
             $business->save();
         } catch (Exception $e) {
@@ -122,7 +122,7 @@ class BusinessApiController extends Controller {
             ]);
         }
         try {
-            $business = Business::findOrFail($request->MemberId);
+            $business = Business::findOrFail($request->BusinessId);
             $business->Category = $request->Category;
             $business->save();
         } catch (Exception $e) {
@@ -149,7 +149,7 @@ class BusinessApiController extends Controller {
             ]);
         }
         try {
-            $business = Business::findOrFail($request->MemberId);
+            $business = Business::findOrFail($request->BusinessId);
             $business->Location = $request->Location;
             $business->save();
         } catch (Exception $e) {
@@ -176,7 +176,7 @@ class BusinessApiController extends Controller {
             ]);
         }
         try {
-            $business = Business::findOrFail($request->MemberId);
+            $business = Business::findOrFail($request->BusinessId);
             $img = Image::make($request->file('Image'));
             $business->profile->Image = $img->encode('data-url');
             $business->profile->save();
@@ -205,7 +205,7 @@ class BusinessApiController extends Controller {
             ]);
         }
         try {
-            $business = Business::findOrFail($request->MemberId);
+            $business = Business::findOrFail($request->BusinessId);
             $business->profile->Image = $request->Image;
             $business->profile->save();
             $business->save();
@@ -233,7 +233,7 @@ class BusinessApiController extends Controller {
             ]);
         }
         try {
-            $business = Business::findOrFail($request->MemberId);
+            $business = Business::findOrFail($request->BusinessId);
             $business->profile->Video = $request->Video;
             $business->profile->save();
             $business->save();
@@ -261,7 +261,7 @@ class BusinessApiController extends Controller {
             ]);
         }
         try {
-            $business = Business::findOrFail($request->MemberId);
+            $business = Business::findOrFail($request->BusinessId);
             $business->profile->Website = $request->Website;
             $business->profile->save();
             $business->save();
@@ -289,7 +289,7 @@ class BusinessApiController extends Controller {
             ]);
         }
         try {
-            $business = Business::findOrFail($request->MemberId);
+            $business = Business::findOrFail($request->BusinessId);
             $business->profile->Detail = $request->Detail;
             $business->profile->save();
             $business->save();

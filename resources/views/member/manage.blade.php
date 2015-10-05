@@ -21,6 +21,11 @@ use App\Models\Category\Role;
     </div>
 </div>
 <div class="row">
+    <div class="container">
+        <div class="column" id="status" style="text-align: center;"></div>
+    </div>
+</div>
+<div class="row">
     <div class="container-fluid">
         <div class="row panel panel-info">
             <div class="container" style="text-align: center;" >

@@ -81,7 +81,7 @@ var listSystem = {
             });
         });
     },
-    provinceList: function (select) {
+    provinceList: function (select, defaultValue) {
         $.ajax({
             url: "/category/api/province",
             method: "GET",
@@ -94,10 +94,13 @@ var listSystem = {
                 $.each(response, function (key, item) {
                     $(select).append("<option value=" + item.PROVINCE_ID + ">" + item.PROVINCE_NAME + "</option>");
                 });
+                if (defaultValue !== null) {
+                    $(select).val(defaultValue);
+                }
             });
         });
     },
-};/* 
+}; /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.

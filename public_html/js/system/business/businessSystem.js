@@ -36,6 +36,7 @@ function editName(id, name) {
         }
     }).done(function (response) {
         if (response.status) {
+            $('#name').val(name);
             notifySuccess();
         } else {
             notifyError(response);
@@ -88,7 +89,7 @@ function editCategory(id, category) {
 }
 function editLocation(id, location) {
     $.ajax({
-        url: '/business/api/category',
+        url: '/business/api/location',
         method: 'POST',
         data: {
             'BusinessId': id,
@@ -196,3 +197,28 @@ function editDetail(id, detail) {
         }
     });
 }
+
+var businessSystem = {
+    initialize: function () {
+        $('#submitName').click(function () {
+            editName($('#businessId').val(), $('#name').val());
+        });
+        $('#Location').change(function () {
+            editLocation($('#businessId').val(), $('#Location').val());
+        });
+        $('#submitImage').click(function () {
+            $('#displayImage').attr('src', $('#Image').val());
+            editImage($('#businessId').val(), $('#Image').val());
+        });
+        $('#submitDesc').click(function () {
+            editDescription($('#businessId').val(), $('#Description').val());
+        });
+        $('#submitVideo').click(function () {
+            editVideo($('#businessId').val(), $('#Video').val());
+        });
+        $('#submitDetail').click(function () {
+            var data = CKEDITOR.instances.editor1.getData();
+            editDetail($('#businessId').val(), data);
+        });
+    }
+};
