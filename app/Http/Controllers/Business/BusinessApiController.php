@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Business;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Member\MemberFunction;
 use App\Models\Business\Business;
+use App\Models\Business\BusinessContact;
 use App\Models\Business\BusinessProfile;
 use App\Models\Member\Member;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Intervention\Image\Image;
@@ -302,6 +304,62 @@ class BusinessApiController extends Controller {
 
         return json_encode([
             "status" => true
+        ]);
+    }
+
+    function postNewContact(Request $request) {
+        $validator = Validator::make($request->all(), [
+                    'BusinessId' => 'required|numeric',
+                    'Name' => 'required|max:255',
+                    'Contact' => 'required|max:255'
+        ]);
+        if ($validator->fails()) {
+            return json_encode([
+                "status" => false,
+                "error" => $validator->errors()->all()
+            ]);
+        }
+        try {
+            $businessContact = new BusinessContact();
+            $businessContact->BusinessId = $request->BusinessId;
+            $businessContact->Name = $request->Name;
+            $businessContact->Contact = $request->Contact;
+            $businessContact->save();
+        } catch (Exception $e) {
+            return json_encode([
+                "status" => false,
+                "error" => $e
+            ]);
+        }
+
+        return json_encode([
+            "status" => true,
+            "data" => $businessContact->id
+        ]);
+    }
+
+    function postDeleteContact(Request $request) {
+        $validator = Validator::make($request->all(), [
+                    'ContactId' => 'required|numeric',
+        ]);
+        if ($validator->fails()) {
+            return json_encode([
+                "status" => false,
+                "error" => $validator->errors()->all()
+            ]);
+        }
+        try {
+            $businessContact = BusinessContact::findOrFail($request->ContactId);
+            $businessContact->delete();
+        } catch (Exception $e) {
+            return json_encode([
+                "status" => false,
+                "error" => $e
+            ]);
+        }
+
+        return json_encode([
+            "status" => true,
         ]);
     }
 

@@ -33,4 +33,20 @@ class BusinessController extends Controller {
         ]);
     }
 
+    function getProfile($id) {
+        try {
+            $business = Business::findOrFail($id);
+            if ($business->MemberId != Session::get('MemberId')) {
+                return redirect()->back();
+            }
+        } catch (Exception $e) {
+            return redirect()->back();
+        } if ($business->MemberId != Session::get('MemberId')) {
+            return redirect()->back();
+        }
+        return view("business.profile")->with([
+                    "business" => $business
+        ]);
+    }
+
 }

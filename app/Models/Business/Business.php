@@ -12,6 +12,10 @@ class Business extends Model {
         return $this->hasOne('App\Models\Business\BusinessProfile', 'BusinessId');
     }
 
+    public function contacts() {
+        return $this->hasMany('App\Models\Business\BusinessContact', "BusinessId");
+    }
+
     public function member() {
         return $this->belongsTo('App\Models\Member\Member', 'MemberId');
     }

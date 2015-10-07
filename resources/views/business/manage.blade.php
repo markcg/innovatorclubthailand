@@ -23,7 +23,7 @@ use App\Models\Category\Role;
                 <input type="hidden" id="businessId" value="{{$business->id}}">
             </div>
             <div class="u-pull-right">
-                <div class="u-pull-right"><a><button class="btn btn-success">แสดงโปรไฟล์ธุรกิจ</button></a></div>
+                <div class="u-pull-right"><a href="/business/profile/{{$business->id}}"><button class="btn btn-success">แสดงโปรไฟล์ธุรกิจ</button></a></div>
             </div>
         </div>
     </div>
@@ -118,7 +118,18 @@ use App\Models\Category\Role;
                             <div class="column" style="text-align: left;">
                                 <div class="panel panel-primary">
                                     <div class="panel-body">
-                                        <div class="column" ></div>
+                                        <div class="column" id="add_contact">
+                                            <input type="text" id="conName" placeholder="ระบุชื่อการติดต่อ">
+                                            <input type="text" id="conContact" placeholder="ระบุการติดต่อ">
+                                            <input type="button" id="submitContact" value="เพิ่ม">
+                                        </div>
+                                    </div>
+                                    <div class="panel-body" id="contactList">
+                                        <?php foreach ($business->contacts as $contact) { ?>
+                                            <div class="column" >
+                                                <button style="padding: 5px;" onclick="deleteContact({{$contact->id}}); deleteThis(this);">ลบ</button> {{$contact->Name}} : {{$contact->Contact}}
+                                            </div>
+                                        <?php } ?>
                                     </div>
                                 </div>
                             </div>
@@ -169,23 +180,22 @@ use App\Models\Category\Role;
 <script src="/js/system/listSystem.js" type="text/javascript"></script>
 <script src="/js/system/business/businessSystem.js" type="text/javascript"></script>
 <script>
-                                $(function () {
-                                    listSystem.provinceList("#Location", $('#defaultLocation').val());
-                                    businessSystem.initialize();
-                                    CKEDITOR.replace('editor1');
-                                    $("body").vegas({
-                                        slides: [
-                                            {src: "/image/landing/slides/3.jpg"},
-                                        ],
-                                        overlay: false
-                                    });
-                                    $('#succes-story').carousel({
-//interval: 2000,
-                                        pause: "hover",
-                                        wrap: true,
-                                    });
-
-                                });
+                                                        $(function () {
+                                                        listSystem.provinceList("#Location", $('#defaultLocation').val());
+                                                                businessSystem.initialize();
+                                                                CKEDITOR.replace('editor1');
+                                                                $("body").vegas({
+                                                        slides: [
+                                                        {src: "/image/landing/slides/3.jpg"},
+                                                        ],
+                                                                overlay: false
+                                                        });
+                                                                $('#succes-story').carousel({
+                                                        //interval: 2000,
+                                                        pause: "hover",
+                                                                wrap: true,
+                                                        });
+                                                        });
 
 </script>
 @endsection

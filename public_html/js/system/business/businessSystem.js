@@ -197,7 +197,61 @@ function editDetail(id, detail) {
         }
     });
 }
-
+function addContact(id, name, contact) {
+    var result = null;
+    $.ajax({
+        url: '/business/api/new-contact',
+        method: 'POST',
+        data: {
+            'BusinessId': id,
+            'Name': name,
+            'Contact': contact
+        },
+        dataType: 'json',
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+            console.log(thrownError);
+        }
+    }).done(function (response) {
+        if (response.status) {
+            notifySuccess();
+            $element = '<div class="column" >'
+                    + '<button style="padding: 5px;" onclick="deleteContact(' + response.data + '); deleteThis(this)">ลบ</button> '
+                    + $('#conName').val()
+                    + ' : '
+                    + $('#conContact').val()
+                    + '</div>';
+            $('#contactList').append($element);
+        } else {
+            notifyError(response);
+        }
+    });
+}
+function deleteContact(id) {
+    $.ajax({
+        url: '/business/api/delete-contact',
+        method: 'POST',
+        data: {
+            'ContactId': id,
+        },
+        dataType: 'json',
+        error: function (xhr, ajaxOptions, thrownError) {
+            console.log(xhr.status);
+            console.log(xhr.responseText);
+            console.log(thrownError);
+        }
+    }).done(function (response) {
+        if (response.status) {
+            notifySuccess();
+        } else {
+            notifyError(response);
+        }
+    });
+}
+function deleteThis(element) {
+    $(element).parent().remove();
+}
 var businessSystem = {
     initialize: function () {
         $('#submitName').click(function () {
@@ -219,6 +273,9 @@ var businessSystem = {
         $('#submitDetail').click(function () {
             var data = CKEDITOR.instances.editor1.getData();
             editDetail($('#businessId').val(), data);
+        });
+        $('#submitContact').click(function () {
+            id = addContact($('#businessId').val(), $('#conName').val(), $('#conContact').val());
         });
     }
 };
