@@ -43,7 +43,9 @@ use App\Models\Category\Role;
                             </div>
                         </div>
                         <div class="column" style="font-size: 15px;">
+                            @if($business->Location != null)
                             {{Province::find($business->Location)->PROVINCE_NAME}}
+                            @endif
                         </div>
                         <div class="column" style="font-size: 12px;">
                             <div style="float:left;"><a href="<?php
