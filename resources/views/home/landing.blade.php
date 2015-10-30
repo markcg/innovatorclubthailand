@@ -1,6 +1,6 @@
 @extends('layouts._mobile_layout')
 @section('content')
-<style>.header-menu{background-color: rgba(44, 103, 0, 0.4);}</style>
+<style>.header-menu{background-color: #0088cc;}</style>
 <div class="row sign-up-area">
     <div class="container" style="text-align: center;">
         <div class="column title header" style="margin-top: 80px;">สนใจค้นหานักลงทุน</div>

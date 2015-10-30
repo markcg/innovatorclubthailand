@@ -36,7 +36,6 @@ use App\Models\Category\Role;
 <script>
 $("body").vegas({
     slides: [
-        {src: "/image/landing/slides/1.jpg"},
     ],
     overlay: true
 });

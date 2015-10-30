@@ -39,13 +39,13 @@ a{text-decoration: none;color: black;}
 /*Header*/
 .logo{padding: 10px;}
 .menu{font-size: 16px;}
-.menu-responsive{position: fixed;top: 0;left: 0;height: 100%;background-color: #2c6700;z-index: 100;display: none;}
+.menu-responsive{position: fixed;top: 0;left: 0;height: 100%;background-color: #0088cc;z-index: 100;display: none;}
 .menu-responsive .header-menu-link, .menu-responsive a{color: white !important;}
 .menu-button{font-size: 30px;font-family: "MaxJohn",sans-serif; display: none;position: fixed;z-index: 99}
 .corner-right{top: 10px;right: 10px;}
 .corner-left{top: 10px;left: 10px;}
 .title.header{font-size: 100px;font-family: 'MaxJohn',sans-serif;line-height: 1;}
-.header-menu{border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;background-color:rgb(44, 103, 0);}
+.header-menu{border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;background-color: #0088cc;}
 .header-menu , .header-menu a{color: white;}
 .header-menu-link{padding: 15px 5px;}
 .header-menu-after::after{
@@ -64,7 +64,7 @@ a{text-decoration: none;color: black;}
     h1{font-size: 3rem;}
 }
 /*Footer*/
-.footer-wrapper{position: relative;background-color: #2c6700;min-height: 150px; text-align: center;padding-bottom: 40px;padding-top: 25px;}
+.footer-wrapper{position: relative;background-color: #005580;min-height: 150px; text-align: center;padding-bottom: 40px;padding-top: 25px;}
 .footer-wrapper a{color: white;}
 
 /*Landing*/

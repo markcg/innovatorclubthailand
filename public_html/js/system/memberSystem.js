@@ -50,7 +50,15 @@ var memberSystem = {
                 }
             }).done(function (response) {
                 if (response.status) {
-                    window.location.href = "/member/login";
+                    if (window.confirm('คุณต้องการลงชื่อเข้าใช้งานเลยหรือไม่?'))
+                    {
+                        window.location.href = "/member/login";
+                    }
+                    else
+                    {
+                        window.location.href = "/";
+                    }
+
                 } else {
                     notifyError(response);
                 }

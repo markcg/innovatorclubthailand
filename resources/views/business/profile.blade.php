@@ -63,7 +63,7 @@ use App\Models\Category\Role;
 </div>
 <div class="row">
     <div class="container">
-        <div class="panel panel-primary">
+        <div class="panel panel-info">
             <div class="panel-heading"><img src="https://www.cofounderslab.com/themes/basic/images/head_icons/experience.png">ภาพรวมธุรกิจของคุณ</div>
             <div class="panel-body" style="font-size: 20px;">
                 <div>
@@ -80,7 +80,7 @@ use App\Models\Category\Role;
             <div class="panel-body">
                 <div class="col-md-8" style="text-align: left;">
 
-                    <div class="panel panel-primary">
+                    <div class="panel panel-info">
                         <div class="panel-heading">วิดีโอธุรกิจ</div>
                         <div class="panel-body">
                             <div class="column" style="text-align: center;">{{$business->profile->Video}}</div>
@@ -88,11 +88,11 @@ use App\Models\Category\Role;
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-info">
                         <div class="panel-heading"><h4><img src="https://www.cofounderslab.com/themes/basic/images/head_icons/about.png">ช่องทางติดต่อ</h4></div>
                         <div class="panel-body">
                             <div class="column" style="text-align: left;">
-                                <div class="panel panel-primary">
+                                <div class="panel panel-info">
                                     <div class="panel-body" id="contactList">
                                         <?php foreach ($business->contacts as $contact) { ?>
                                             <div class="column" >
@@ -112,7 +112,7 @@ use App\Models\Category\Role;
 @endif
 <div class="row">
     <div class="container" style="text-align: center;" >
-        <div class="panel panel-primary">
+        <div class="panel panel-info">
             <div class="panel-heading"><h4>ข้อมูลโดยละเอียด</h4></div>
             <div class="panel-body">
                 <div class="column" style="text-align: left;">
@@ -141,7 +141,6 @@ $(function () {
     CKEDITOR.replace('editor1');
     $("body").vegas({
         slides: [
-            {src: "/image/landing/slides/3.jpg"},
         ],
         overlay: false
     });

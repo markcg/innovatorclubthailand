@@ -13,7 +13,7 @@
                 <input type="password" id="password" name="Password" placeholder="Password">
             </div>
             <div class="column">
-                <input class="btn btn-success" id="submit" value="ลงชื่อเข้าใช้">
+                <input class="btn btn-info" id="submit" value="ลงชื่อเข้าใช้">
             </div>
         </form>
     </div>

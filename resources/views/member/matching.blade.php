@@ -108,7 +108,6 @@
 <script>
     $("body").vegas({
         slides: [
-            {src: "/image/landing/slides/1.jpg"},
         ],
         overlay: true
     });

@@ -78,7 +78,7 @@ use App\Models\Category\Role;
 </div>
 <div class="row">
     <div class="container">
-        <div class="panel panel-primary">
+        <div class="panel panel-info">
             <div class="panel-heading"><img src="https://www.cofounderslab.com/themes/basic/images/head_icons/experience.png">ภาพรวมธุรกิจของคุณ</div>
             <div class="panel-body" style="font-size: 20px;">
                 <div>
@@ -97,7 +97,7 @@ use App\Models\Category\Role;
             <div class="panel-body">
                 <div class="col-md-8" style="text-align: left;">
 
-                    <div class="panel panel-primary">
+                    <div class="panel panel-info">
                         <div class="panel-heading">วิดีโอธุรกิจ</div>
                         <div class="panel-body">
                             <div class="column" style="text-align: center;"><iframe width="550" height="300"></iframe></div>
@@ -112,11 +112,11 @@ use App\Models\Category\Role;
 
                 </div>
                 <div class="col-md-4">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-info">
                         <div class="panel-heading"><h4><img src="https://www.cofounderslab.com/themes/basic/images/head_icons/about.png">ช่องทางติดต่อ</h4></div>
                         <div class="panel-body">
                             <div class="column" style="text-align: left;">
-                                <div class="panel panel-primary">
+                                <div class="panel panel-info">
                                     <div class="panel-body">
                                         <div class="column" id="add_contact">
                                             <input type="text" id="conName" placeholder="ระบุชื่อการติดต่อ">
@@ -143,7 +143,7 @@ use App\Models\Category\Role;
 @endif
 <div class="row">
     <div class="container" style="text-align: center;" >
-        <div class="panel panel-primary">
+        <div class="panel panel-info">
             <div class="panel-heading"><h4>ข้อมูลโดยละเอียด</h4></div>
             <div class="panel-body">
                 <div class="column" style="text-align: left;">
@@ -180,22 +180,21 @@ use App\Models\Category\Role;
 <script src="/js/system/listSystem.js" type="text/javascript"></script>
 <script src="/js/system/business/businessSystem.js" type="text/javascript"></script>
 <script>
-                                                        $(function () {
-                                                        listSystem.provinceList("#Location", $('#defaultLocation').val());
-                                                                businessSystem.initialize();
-                                                                CKEDITOR.replace('editor1');
-                                                                $("body").vegas({
-                                                        slides: [
-                                                        {src: "/image/landing/slides/3.jpg"},
-                                                        ],
-                                                                overlay: false
-                                                        });
-                                                                $('#succes-story').carousel({
-                                                        //interval: 2000,
-                                                        pause: "hover",
-                                                                wrap: true,
-                                                        });
-                                                        });
+                                                            $(function () {
+                                                            listSystem.provinceList("#Location", $('#defaultLocation').val());
+                                                                    businessSystem.initialize();
+                                                                    CKEDITOR.replace('editor1');
+                                                                    $("body").vegas({
+                                                            slides: [
+                                                            ],
+                                                                    overlay: false
+                                                            });
+                                                                    $('#succes-story').carousel({
+                                                            //interval: 2000,
+                                                            pause: "hover",
+                                                                    wrap: true,
+                                                            });
+                                                            });
 
 </script>
 @endsection

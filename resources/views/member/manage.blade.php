@@ -41,11 +41,11 @@ use App\Models\Category\Role;
 </div>
 <div class="row">
     <div class="container" style="text-align: center;" >
-        <div class="panel panel-primary">
+        <div class="panel panel-info">
             <div class="panel-heading"><h4><img src="https://www.cofounderslab.com/themes/basic/images/head_icons/about.png">เกี่ยวกับฉัน</h4></div>
             <div class="panel-body">
                 <div class="column" style="text-align: left;">
-                    <div class="panel panel-primary">
+                    <div class="panel panel-info">
                         <div class="panel-body">
                             <div class="column" >{{$member->profile->About}}</div>
                         </div>
@@ -53,12 +53,12 @@ use App\Models\Category\Role;
                 </div>
             </div>
         </div>
-        <div class="panel panel-primary">
+        <div class="panel panel-info">
             <div class="panel-heading"><h4><img src="https://www.cofounderslab.com/themes/basic/images/head_icons/experience.png">ธุรกิจของฉัน</h4></div>
             <div class="panel-body">
                 <div class="column" style="text-align: left;">
                     <div style="text-align: center;">
-                        <div class="col-md-6 panel panel-primary">
+                        <div class="col-md-6 panel panel-info">
                             <div class="panel-body">
                                 <div class="column" >
                                     @if(empty($startup)|| is_null($startup))
@@ -72,16 +72,16 @@ use App\Models\Category\Role;
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 panel panel-primary">
+                        <div class="col-md-6 panel panel-info">
                             <div class="panel-body">
                                 <div class="column" >
                                     @if(empty($investor) || is_null($investor))
                                     <div>นักลงทุนพร้อมลงทุนกับธุรกิจ</div>
                                     <div class="h1">Investor!</div>
-                                    <button class="btn btn-info" onclick="createBusiness({{Session::get('MemberId')}}, 2)">สร้างพอร์ตฟอลิโอ้</button>
+                                    <button class="btn btn-info" onclick="createBusiness({{Session::get('MemberId')}}, 2)" disabled>สร้างพอร์ตฟอลิโอ้</button>
                                     @else
                                     <div class="h1">Investor Profile</div>
-                                    <a href="/business/manage/{{$investor->id}}"><button class="btn btn-info">ดูพอร์ตโฟลิโอของคุณ</button></a>
+                                    <a href="/business/manage/{{$investor->id}}"><button class="btn btn-info disabled" disabled>ดูพอร์ตโฟลิโอของคุณ</button></a>
                                     @endif
                                 </div>
                             </div>

@@ -1,7 +1,6 @@
 @extends('layouts._mobile_layout')
 @section('content')
 <div class="row" style="margin-top: 100px;">
-    <div></div>
     <div class="container" style="text-align: center;" >
         <div class="column"><h1>สมัครสมาชิก</h1></div>
         <div class="column" id="status"></div>
@@ -14,7 +13,7 @@
                 <input type="password" id="password" name="Password" placeholder="Password">
             </div>
             <div class="column">
-                <input class="btn btn-success" id="submit" value="สมัครสมาชิก">
+                <input class="btn btn-info" id="submit" value="สมัครสมาชิก">
             </div>
         </form>
     </div>
